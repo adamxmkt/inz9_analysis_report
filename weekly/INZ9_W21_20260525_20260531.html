@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>INZ9 - MKT周报 · 2026第21周</title>
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif; font-size: 14px; line-height: 1.6; color: #172B4D; max-width: 980px; margin: 0 auto; padding: 32px 40px; background: #fff; }
+  .page-title { font-size: 26px; font-weight: 700; color: #172B4D; margin: 0 0 6px; padding-bottom: 12px; border-bottom: 3px solid #0052CC; }
+  .page-meta { font-size: 12px; color: #6B778C; margin-bottom: 28px; }
+  h2 { font-size: 17px; font-weight: 700; color: #172B4D; margin: 28px 0 10px; padding-bottom: 6px; border-bottom: 1px solid #DFE1E6; }
+  h3 { font-size: 14px; font-weight: 700; color: #5E6C84; margin: 16px 0 8px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .panel { border-radius: 4px; padding: 11px 15px; margin: 10px 0; display: flex; gap: 10px; align-items: flex-start; font-size: 13px; line-height: 1.55; }
+  .panel-icon { font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+  .panel-body { flex: 1; }
+  .panel.info    { background: #DEEBFF; border-left: 4px solid #0052CC; }
+  .panel.warning { background: #FFFAE6; border-left: 4px solid #FF8B00; }
+  .panel.success { background: #E3FCEF; border-left: 4px solid #00875A; }
+  .panel.error   { background: #FFEBE6; border-left: 4px solid #DE350B; }
+  .panel strong  { font-weight: 600; }
+  .metric-row { display: flex; gap: 10px; margin: 12px 0; flex-wrap: wrap; }
+  .metric-card { flex: 1; min-width: 130px; background: #F4F5F7; border-radius: 6px; padding: 12px 14px; }
+  .metric-card .label { font-size: 11px; color: #6B778C; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .metric-card .value { font-size: 20px; font-weight: 700; color: #172B4D; line-height: 1.2; }
+  .metric-card .sub { font-size: 11px; color: #6B778C; margin-top: 3px; line-height: 1.4; }
+  .metric-card .value.green { color: #00875A; }
+  .metric-card .value.red   { color: #DE350B; }
+  .metric-card .value.orange{ color: #FF8B00; }
+  .wow { display: block; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 3px; margin-top: 6px; letter-spacing: 0.01em; white-space: normal; word-break: break-word; line-height: 1.5; }
+  .wow-up        { background: #E3FCEF; color: #006644; }
+  .wow-down      { background: #FFEBE6; color: #BF2600; }
+  .wow-good-down { background: #E3FCEF; color: #006644; }
+  .wow-neutral   { background: #F4F5F7; color: #5E6C84; }
+  .f-wow { font-size: 10px; font-weight: 700; margin-top: 4px; padding: 1px 6px; border-radius: 3px; display: inline-block; }
+  .f-wow-up   { background: rgba(0,135,90,0.15); color: #006644; }
+  .f-wow-down { background: rgba(222,53,11,0.1); color: #BF2600; }
+  table { width: 100%; border-collapse: collapse; font-size: 12.5px; margin: 10px 0; }
+  th { background: #F4F5F7; color: #5E6C84; font-weight: 700; font-size: 11px; text-align: left; padding: 7px 10px; border: 1px solid #DFE1E6; white-space: nowrap; }
+  td { padding: 7px 10px; border: 1px solid #DFE1E6; vertical-align: middle; color: #172B4D; }
+  tr:nth-child(even) td { background: #FAFBFC; }
+  .lozenge { display: inline-block; padding: 2px 8px; border-radius: 3px; font-size: 11px; font-weight: 600; line-height: 1.6; white-space: nowrap; }
+  .lozenge-green  { background: #E3FCEF; color: #006644; }
+  .lozenge-yellow { background: #FFFAE6; color: #974F0C; }
+  .lozenge-red    { background: #FFEBE6; color: #BF2600; }
+  .lozenge-blue   { background: #DEEBFF; color: #0747A6; }
+  .lozenge-gray   { background: #F4F5F7; color: #5E6C84; }
+  .lozenge-purple { background: #EAE6FF; color: #403294; }
+  .code { font-family: "SFMono-Regular", Consolas, monospace; font-size: 11px; color: #5E6C84; }
+  hr { border: none; border-top: 1px solid #DFE1E6; margin: 24px 0; }
+  p { margin: 8px 0; }
+  .section-note { font-size: 12px; color: #6B778C; margin-bottom: 10px; }
+  .funnel-row { display: flex; align-items: center; gap: 4px; margin: 14px 0; flex-wrap: wrap; }
+  .funnel-step { display: flex; flex-direction: column; align-items: center; flex: 1; min-width: 80px; }
+  .funnel-box { width: 100%; padding: 10px 6px; background: #DEEBFF; border-radius: 5px; text-align: center; }
+  .funnel-box .f-label { font-size: 11px; color: #0747A6; font-weight: 700; }
+  .funnel-box .f-val   { font-size: 20px; font-weight: 700; color: #0052CC; }
+  .funnel-box .f-rate  { font-size: 11px; color: #6B778C; margin-top: 2px; }
+  .funnel-arrow { font-size: 18px; color: #B3BAC5; align-self: center; flex: 0 0 auto; }
+  .funnel-step.highlight .funnel-box { background: #E3FCEF; }
+  .funnel-step.highlight .funnel-box .f-label { color: #006644; }
+  .funnel-step.highlight .funnel-box .f-val   { color: #00875A; }
+  .funnel-step.warn .funnel-box { background: #FFFAE6; }
+  .funnel-step.warn .funnel-box .f-label { color: #974F0C; }
+  .funnel-step.warn .funnel-box .f-val   { color: #FF8B00; }
+  .chart-wrap { position: relative; height: 240px; margin: 12px 0 6px; }
+  .chart-legend { display: flex; gap: 18px; font-size: 12px; color: #5E6C84; margin-bottom: 6px; flex-wrap: wrap; }
+  .chart-legend span { display: flex; align-items: center; gap: 6px; }
+  .legend-box { width: 12px; height: 12px; border-radius: 2px; display: inline-block; }
+  .ads-grid { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 14px 0; }
+  .ads-card { border: 1px solid #DFE1E6; border-radius: 8px; overflow: hidden; }
+  .ads-card.has-fdc   { border-top: 3px solid #00875A; }
+  .ads-card.no-conv   { border-top: 3px solid #FF8B00; }
+  .ads-card.new-ads   { border-top: 3px solid #0052CC; }
+  .ads-card.low-data  { border-top: 3px solid #B3BAC5; }
+  .ads-card-header { padding: 10px 14px; background: #F4F5F7; border-bottom: 1px solid #DFE1E6; display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+  .ads-card-header .ads-name { font-family: "SFMono-Regular", Consolas, monospace; font-size: 11px; color: #172B4D; font-weight: 700; flex: 1; }
+  .ads-card-body { padding: 12px 14px; display: flex; gap: 16px; }
+  .ads-preview { flex-shrink: 0; width: 110px; }
+  .ads-preview img { width: 110px; height: 110px; object-fit: cover; border-radius: 5px; border: 1px solid #DFE1E6; display: block; background: #F4F5F7; }
+  .ads-preview .preview-label { font-size: 10px; color: #6B778C; text-align: center; margin-top: 4px; line-height: 1.4; }
+  .ads-kpi-section { flex: 1; min-width: 0; }
+  .kpi-group-label { font-size: 10px; color: #6B778C; font-weight: 700; letter-spacing: 0.04em; margin-bottom: 4px; margin-top: 8px; text-transform: uppercase; }
+  .ads-kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 7px; margin-bottom: 8px; }
+  .ads-kpi { background: #FAFBFC; border: 1px solid #EBECF0; border-radius: 5px; padding: 7px 9px; }
+  .ads-kpi .kpi-label { font-size: 10px; color: #6B778C; font-weight: 500; letter-spacing: 0.03em; margin-bottom: 3px; }
+  .ads-kpi .kpi-value { font-size: 15px; font-weight: 700; color: #172B4D; line-height: 1.2; }
+  .ads-kpi .kpi-value.green  { color: #00875A; }
+  .ads-kpi .kpi-value.red    { color: #DE350B; }
+  .ads-kpi .kpi-value.orange { color: #FF8B00; }
+  .ads-tag-row { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .trend-wrap { position: relative; height: 120px; margin: 10px 0 4px; }
+  .total-row td { background: #F4F5F7 !important; font-weight: 700; }
+  .rank-img-row td { padding: 6px 10px; background: #FAFBFC; }
+  .rank-thumb { width: 72px; height: 72px; object-fit: cover; border-radius: 4px; border: 1px solid #DFE1E6; }
+  .num-right { text-align: right; }
+  .progress-bar-wrap { background: #DFE1E6; border-radius: 4px; height: 10px; margin: 6px 0; overflow: hidden; }
+  .progress-bar { height: 100%; border-radius: 4px; }
+  .small-metric-row { display: flex; gap: 8px; margin: 8px 0; flex-wrap: wrap; }
+  .small-metric { flex: 1; min-width: 80px; background: #F4F5F7; border-radius: 5px; padding: 8px 10px; }
+  .small-metric .s-label { font-size: 10px; color: #6B778C; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+  .small-metric .s-value { font-size: 16px; font-weight: 700; color: #172B4D; }
+  .fraud-badge { display: inline-block; background: #FFEBE6; color: #BF2600; border-radius: 3px; font-size: 10px; font-weight: 700; padding: 1px 6px; margin-left: 4px; }
+</style>
+</head>
+<body>
+
+<div class="page-title">INZ9 - MKT周报 · 2026第21周</div>
+<div class="page-meta">
+  <strong>汇报周期：</strong>2026年5月25日（周一）至 2026年5月31日（周日）&nbsp;｜&nbsp;
+  <strong>品牌：</strong>INZ9&nbsp;｜&nbsp;
+  <strong>货币：</strong>Ads Spend 以 $ 呈现 · 存款及转化金额以 RM 呈现&nbsp;｜&nbsp;
+  <strong>生成日期：</strong>2026年6月3日（周三）&nbsp;｜&nbsp;
+  <strong>数据来源：</strong>Supabase · inz9_campaign_result · traffic_channel = MKT
+</div>
+
+<!-- ══ 一 · 周度核心数据概览 ══ -->
+<h2>一 · 周度核心数据概览</h2>
+<p class="section-note">支出侧（Ads Spend、IMP、Link Click）仅聚合 Ads_Spend &gt; 0 的行；转化侧（REG_adj、FDC_adj、FDA_adj 及以下所有转化指标）聚合所有行含零花费归因行。结论与建议以 _adj 数值为主要依据。<br>
+<span style="color:#6B778C;">📊 每张卡片下方灰色数值 = <strong>W20（5月18–24日）</strong>对比基准。</span></p>
+
+<div class="metric-row">
+  <div class="metric-card">
+    <div class="label">Ads Spend</div>
+    <div class="value">$420.12</div>
+    <div class="sub">W20：$437.99</div>
+    <span class="wow wow-good-down">▼ −4.1% vs W20</span>
+  </div>
+  <div class="metric-card">
+    <div class="label">IMP</div>
+    <div class="value">18,781</div>
+    <div class="sub">W20：29,119</div>
+    <span class="wow wow-down">▼ −35.5% vs W20</span>
+  </div>
+  <div class="metric-card">
+    <div class="label">CTR</div>
+    <div class="value orange">0.63%</div>
+    <div class="sub">W20：0.56%</div>
+    <span class="wow wow-up">▲ +0.07pp vs W20</span>
+  </div>
+  <div class="metric-card">
+    <div class="label">CPM</div>
+    <div class="value orange">$22.37</div>
+    <div class="sub">W20：$15.04</div>
+    <span class="wow wow-down">▼ 成本上升 vs W20</span>
+  </div>
+  <div class="metric-card">
+    <div class="label">REG_adj</div>
+    <div class="value orange">10</div>
+    <div class="sub">W20：16</div>
+    <span class="wow wow-down">▼ −37.5% vs W20</span>
+  </div>
+  <div class="metric-card">
+    <div class="label">FDC_adj</div>
+    <div class="value red">4</div>
+    <div class="sub">W20：10</div>
+    <span class="wow wow-down">▼ −60.0% vs W20</span>
+  </div>
+</div>
+
+<div class="metric-row">
+  <div class="metric-card">
+    <div class="label">FDA_adj</div>
+    <div class="value red">RM 450</div>
+    <div class="sub">W20：RM 1,355</div>
+    <span class="wow wow-down">▼ −66.8% vs W20</span>
+  </div>
+  <div class="metric-card">
+    <div class="label">Fraud Player</div>
+    <div class="value red">3</div>
+    <div class="sub">W20：5 · 占FDC 75%</div>
+    <span class="wow wow-neutral">— 严重超标 &gt;20%</span>
+  </div>
+  <div class="metric-card">
+    <div class="label">FDCR_adj</div>
+    <div class="value orange">40.0%</div>
+    <div class="sub">W20：62.5%</div>
+    <span class="wow wow-down">▼ −22.5pp vs W20</span>
+  </div>
+  <div class="metric-card">
+    <div class="label">AFDA_adj</div>
+    <div class="value orange">RM 112.50</div>
+    <div class="sub">W20：RM 135.50</div>
+    <span class="wow wow-down">▼ −17.0% vs W20</span>
+  </div>
+  <div class="metric-card">
+    <div class="label">CPA_adj</div>
+    <div class="value red">$105.03</div>
+    <div class="sub">W20：$43.80</div>
+    <span class="wow wow-down">▼ 恶化 ×2.4 vs W20</span>
+  </div>
+  <div class="metric-card">
+    <div class="label">FD Ads Rate</div>
+    <div class="value green">0.934</div>
+    <div class="sub">W20：0.323</div>
+    <span class="wow wow-down">▼ 恶化 ×2.9 vs W20</span>
+  </div>
+</div>
+
+<div class="metric-row">
+  <div class="metric-card">
+    <div class="label">GGR_adj（全渠道）</div>
+    <div class="value green">RM 5,241.79</div>
+    <div class="sub">W20：RM 1,489.82</div>
+    <span class="wow wow-up">▲ +251.8% vs W20</span>
+  </div>
+  <div class="metric-card">
+    <div class="label">TDA_adj（全渠道）</div>
+    <div class="value">RM 17,918</div>
+    <div class="sub">W20：RM 24,148</div>
+    <span class="wow wow-down">▼ −25.8% vs W20</span>
+  </div>
+</div>
+
+<div class="panel warning">
+  <div class="panel-icon">⚠️</div>
+  <div class="panel-body">
+    <strong>本周整体表现：新增 FDC 大幅下滑，但 GGR 受存量玩家大额存款拉动显著反弹。</strong>
+    本周 FDC_adj 仅 4 人（W20 的 10 人），FDA_adj RM450（W20 RM1,355），CPA_adj $105.03（W20 $43.80），
+    新客获取效率明显恶化。FD Ads Rate 0.934 仍低于 1（首存回本），但仅靠 5/28 单日异常大额首存（AMB1_CN06 RM380_adj，其中 RM300 为归因调整）支撑。
+    GGR_adj 全渠道 RM5,242 大幅反弹，主因 5/28 AMB1_CN06 有玩家单日 SDA RM1,375、GGR_adj RM1,730，
+    以及 5/29 AMB1+3 老玩家 TDA RM1,000 贡献 GGR RM716，属存量玩家行为而非新客驱动。
+    另需特别关注：本周 Fraud Player 3 人（占 FDC_adj 75%），实际有效 FDC 仅 1 人（AMB3_CN10 5/29）。
+  </div>
+</div>
+
+<!-- ══ 二 · 全周漏斗汇总 ══ -->
+<h2>二 · 全周漏斗汇总</h2>
+
+<div class="funnel-row">
+  <div class="funnel-step">
+    <div class="funnel-box">
+      <div class="f-label">Ads Spend</div>
+      <div class="f-val">$420</div>
+      <div class="f-rate">MKT 合计</div>
+      <div class="f-wow f-wow-down">▼ −4.1% vs W20</div>
+    </div>
+  </div>
+  <div class="funnel-arrow">›</div>
+  <div class="funnel-step">
+    <div class="funnel-box">
+      <div class="f-label">Link Click</div>
+      <div class="f-val">119</div>
+      <div class="f-rate">CTR 0.63%</div>
+      <div class="f-wow f-wow-down">▼ −27.0% vs W20</div>
+    </div>
+  </div>
+  <div class="funnel-arrow">›</div>
+  <div class="funnel-step warn">
+    <div class="funnel-box">
+      <div class="f-label">REG_adj</div>
+      <div class="f-val">10</div>
+      <div class="f-rate">归因后注册</div>
+      <div class="f-wow f-wow-down">▼ −37.5% vs W20</div>
+    </div>
+  </div>
+  <div class="funnel-arrow">›</div>
+  <div class="funnel-step warn">
+    <div class="funnel-box">
+      <div class="f-label">FDC_adj</div>
+      <div class="f-val">4</div>
+      <div class="f-rate">FDCR_adj 40.0%</div>
+      <div class="f-wow f-wow-down">▼ −60.0% vs W20</div>
+    </div>
+  </div>
+  <div class="funnel-arrow">›</div>
+  <div class="funnel-step warn">
+    <div class="funnel-box">
+      <div class="f-label">FDA_adj</div>
+      <div class="f-val">RM 450</div>
+      <div class="f-rate">AFDA RM112.50</div>
+      <div class="f-wow f-wow-down">▼ −66.8% vs W20</div>
+    </div>
+  </div>
+</div>
+
+<div class="panel error">
+  <div class="panel-icon">🚨</div>
+  <div class="panel-body">
+    <strong>⚠️ Fraud 警示：FDC_adj 4 人中 3 人为 Fraud Player，实质有效新客仅 1 人。</strong>
+    AMB1_CN06 贡献 FDC_adj 3 人，但全部标注 Fraud Player（5/27 × 1，5/28 × 2）；
+    唯一非 Fraud 的 FDC 来自 AMB3_CN10（5/29，FDA RM50，非 Fraud）。
+    5/28 AMB1_CN06 的 FDA_adj RM380 中，RM300 为归因模型从其他渠道重新分配至该素材，
+    需结合原始 FDA（RM80）理解真实获客成本。Fraud Player 须排除在 L2 质量评估之外。
+  </div>
+</div>
+
+<!-- ══ 三 · 每日花费与转化趋势 ══ -->
+<h2>三 · 每日花费与转化趋势</h2>
+
+<div class="chart-legend">
+  <span><span class="legend-box" style="background:#0052CC"></span>Ads Spend（柱，$）</span>
+  <span><span class="legend-box" style="background:#FF8B00"></span>FDA_adj（柱，RM）</span>
+  <span><span class="legend-box" style="background:#00875A;border-radius:50%"></span>GGR_adj 全渠道（折线，RM）</span>
+</div>
+<div class="chart-wrap"><canvas id="dailyChart"></canvas></div>
+
+<div class="chart-legend">
+  <span><span class="legend-box" style="background:#B5D4F4"></span>Link Click</span>
+  <span><span class="legend-box" style="background:#0052CC"></span>REG_adj</span>
+  <span><span class="legend-box" style="background:#00875A"></span>FDC_adj</span>
+</div>
+<div class="chart-wrap"><canvas id="funnelChart"></canvas></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>日期</th><th>花费($)</th><th>IMP</th><th>Link Click</th><th>CTR</th>
+      <th>REG_adj</th><th>FDC_adj</th><th>FDA_adj(RM)</th><th>FDCR_adj</th>
+      <th>GGR_adj全渠道(RM)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>5/25 周一</td><td class="num-right">78.26</td><td class="num-right">5,576</td><td class="num-right">34</td><td class="num-right">0.61%</td><td class="num-right">1</td><td class="num-right">0</td><td class="num-right">—</td><td class="num-right">—</td><td class="num-right">+368.71</td></tr>
+    <tr><td>5/26 周二</td><td class="num-right">10.05</td><td class="num-right">671</td><td class="num-right">4</td><td class="num-right">0.60%</td><td class="num-right">0</td><td class="num-right">0</td><td class="num-right">—</td><td class="num-right">—</td><td class="num-right">+88.00</td></tr>
+    <tr><td>5/27 周三</td><td class="num-right">52.53</td><td class="num-right">2,074</td><td class="num-right">17</td><td class="num-right">0.82%</td><td class="num-right">3</td><td class="num-right">1 <span class="fraud-badge">Fraud</span></td><td class="num-right">20</td><td class="num-right">50%</td><td class="num-right" style="color:#DE350B;">−106.28</td></tr>
+    <tr><td>5/28 周四</td><td class="num-right">31.41</td><td class="num-right">1,443</td><td class="num-right">8</td><td class="num-right">0.55%</td><td class="num-right">2</td><td class="num-right">2 <span class="fraud-badge">Fraud×2</span></td><td class="num-right">380</td><td class="num-right">100%</td><td class="num-right" style="color:#00875A;">+732.41</td></tr>
+    <tr><td>5/29 周五</td><td class="num-right">55.10</td><td class="num-right">2,305</td><td class="num-right">11</td><td class="num-right">0.48%</td><td class="num-right">1</td><td class="num-right">1</td><td class="num-right">50</td><td class="num-right">100%</td><td class="num-right" style="color:#00875A;">+1,059.77</td></tr>
+    <tr><td>5/30 周六</td><td class="num-right">75.07</td><td class="num-right">3,153</td><td class="num-right">19</td><td class="num-right">0.60%</td><td class="num-right">2</td><td class="num-right">0</td><td class="num-right">—</td><td class="num-right">—</td><td class="num-right" style="color:#00875A;">+943.73</td></tr>
+    <tr><td>5/31 周日</td><td class="num-right">117.70</td><td class="num-right">3,559</td><td class="num-right">26</td><td class="num-right">0.73%</td><td class="num-right">1</td><td class="num-right">0</td><td class="num-right">—</td><td class="num-right">—</td><td class="num-right" style="color:#00875A;">+2,155.46</td></tr>
+    <tr class="total-row">
+      <td><strong>合计</strong></td>
+      <td class="num-right"><strong>$420.12</strong></td>
+      <td class="num-right"><strong>18,781</strong></td>
+      <td class="num-right"><strong>119</strong></td>
+      <td class="num-right"><strong>0.63%</strong></td>
+      <td class="num-right"><strong>10</strong></td>
+      <td class="num-right"><strong>4</strong></td>
+      <td class="num-right"><strong>RM 450</strong></td>
+      <td class="num-right"><strong>40.0%</strong></td>
+      <td class="num-right"><strong>RM 5,241.79</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="panel warning">
+  <div class="panel-icon">⚠️</div>
+  <div class="panel-body">
+    <strong>每日趋势：5/28 周四与 5/29 周五为本周唯二有 FDC 的日期，但前者全为 Fraud。</strong>
+    5/28 AMB1_CN06 以最低单日花费（$31.41）录得 FDC_adj 2 人，但均为 Fraud，FDA_adj RM380 主要来自归因调整；
+    5/29 AMB3_CN10 录得唯一真实 FDC（RM50），GGR RM100，同日存量玩家 AMB1+3 贡献 TDA RM1,000 推高整体 GGR。
+    5/31 周日花费最高（$117.70，GIF_AMB3 + AMB1_CN06 + AMB1_CN10 + AMB3_CN10 合计），
+    但无任何 FDC，花费效率最差。GGR 全渠道 5/31 高达 RM2,155，全部来自存量老玩家，与当日广告无直接关联。
+  </div>
+</div>
+
+<!-- ══ 四 · KPI 周度总结 ══ -->
+<h2>四 · KPI 周度总结</h2>
+
+<h3>L2 · 本周（W21）评估预告 & 上周（W20）正式评估</h3>
+
+<div class="metric-row">
+  <div class="metric-card">
+    <div class="label">W20 D7 Ads Rate</div>
+    <div class="value orange">待核查</div>
+    <div class="sub">W20 FDC_adj 10人，D7 窗口成熟中</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">W20 D7A_adj</div>
+    <div class="value orange">—</div>
+    <div class="sub">待 D7 成熟后汇报</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">W21 FDC_adj（有效）</div>
+    <div class="value red">1人</div>
+    <div class="sub">排除 Fraud 3 人后</div>
+  </div>
+  <div class="metric-card">
+    <div class="label">W21 D7（全数未成熟）</div>
+    <div class="value orange">—</div>
+    <div class="sub">5/27–5/29 FDC 均未满 7 天</div>
+  </div>
+</div>
+
+<div class="panel error">
+  <div class="panel-icon">🚨</div>
+  <div class="panel-body">
+    <strong>L2 正式评估（W20）：D7 窗口部分成熟，完整评估留至下周（6/8）报告。</strong>
+    W20（5/18–5/24）FDC_adj 10 人，D7 窗口最早于 5/25 成熟，最晚 5/31 成熟；
+    本报告生成日（6/3）W20 全部 FDC 的 D7 已经成熟，但数据库中 D7A_adj 字段尚未录入，
+    下周报告将补充完整 W20 D7 Ads Rate 与 D7A_adj 评估。
+    W19（5/11–5/17）留存参考：AMB1_CN06（5/14 FDC）D7CR 100%、D7A RM2,058；
+    GIF_AMB3（5/16 FDC）D7CR 100%、D7A RM800，历史留存质量较强。
+  </div>
+</div>
+
+<div class="panel info">
+  <div class="panel-icon">📊</div>
+  <div class="panel-body">
+    <strong>W21 D7 预告（数据全数未成熟）：</strong>
+    W21 FDC_adj 4 人分布于 5/27（1人，Fraud）、5/28（2人，Fraud×2）、5/29（1人，非 Fraud）。
+    成熟时间：5/27 FDC → D7 成熟于 6/3（今日），但该玩家为 Fraud；
+    5/28 FDC → D7 成熟于 6/4；5/29 FDC（有效）→ D7 成熟于 6/5。
+    有效 FDC 仅 1 人，D7 留存评估意义有限，正式 L2 于下周（6/8）报告执行。
+  </div>
+</div>
+
+<h3>W19（上上周）留存基准参考</h3>
+<table>
+  <thead>
+    <tr>
+      <th>素材</th><th>首存日</th><th>FDC_adj</th><th>FDA_adj(RM)</th>
+      <th>D7CR_adj ✓</th><th>D7A_adj(RM) ✓</th>
+      <th>D15CR_adj ✓</th><th>D15A_adj(RM) ✓</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="code">AMB1_CN06</td><td>5/14</td><td>1</td><td>RM 30</td>
+      <td><span class="lozenge lozenge-green">100% ✓</span></td><td>RM 2,058</td>
+      <td><span class="lozenge lozenge-green">100% ✓</span></td><td>RM 2,258</td>
+    </tr>
+    <tr>
+      <td class="code">GIF_AMB3_CN03</td><td>5/15</td><td>2</td><td>RM 200</td>
+      <td><span class="lozenge lozenge-blue">—</span></td><td><span class="lozenge lozenge-blue">未成熟</span></td>
+      <td><span class="lozenge lozenge-blue">—</span></td><td><span class="lozenge lozenge-blue">未成熟</span></td>
+    </tr>
+    <tr>
+      <td class="code">GIF_AMB3_CN03</td><td>5/16</td><td>1</td><td>RM 50</td>
+      <td><span class="lozenge lozenge-green">100% ✓</span></td><td>RM 800</td>
+      <td><span class="lozenge lozenge-green">100% ✓</span></td><td>RM 1,409</td>
+    </tr>
+    <tr>
+      <td class="code">AMB1_CN06</td><td>5/16</td><td>1</td><td>RM 300</td>
+      <td><span class="lozenge lozenge-blue">—</span></td><td><span class="lozenge lozenge-blue">未成熟</span></td>
+      <td><span class="lozenge lozenge-blue">—</span></td><td><span class="lozenge lozenge-blue">未成熟</span></td>
+    </tr>
+    <tr>
+      <td class="code">RBT1_CN01</td><td>5/14</td><td>1</td><td>RM 20</td>
+      <td><span class="lozenge lozenge-blue">—</span></td><td><span class="lozenge lozenge-blue">—</span></td>
+      <td><span class="lozenge lozenge-blue">—</span></td><td><span class="lozenge lozenge-blue">—</span></td>
+    </tr>
+    <tr class="total-row">
+      <td colspan="2"><strong>W19 合计</strong></td><td><strong>6</strong></td><td><strong>RM 600</strong></td>
+      <td colspan="2"><strong>已成熟 D7CR 100%（2/2）</strong></td>
+      <td colspan="2"><strong>已成熟 D15CR 100%（2/2）</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ══ 五 · 周度广告素材表现 ══ -->
+<h2>五 · 周度广告素材表现</h2>
+<p class="section-note">排列顺序：① 有花费有FDC_adj（花费降序）→ ② 有花费无FDC_adj → ③ 新素材（Active Days ≤3）<br>
+⚠️ Fraud Player 已标注，L2 评估须剔除 Fraud FDC。</p>
+
+<div class="ads-grid">
+
+  <!-- ① AMB1_CN06 - 最高花费，有FDC但全Fraud -->
+  <div class="ads-card has-fdc">
+    <div class="ads-card-header">
+      <div class="ads-name">MYR_INZ9_TRSA_VD_AMB1_CN06</div>
+      <span class="lozenge lozenge-purple">VD 视频</span>
+      <span class="lozenge lozenge-red">⚠ FDC_adj 3人全为 Fraud</span>
+    </div>
+    <div class="ads-card-body">
+      <div class="ads-preview">
+        <img src="https://www.facebook.com/ads/image/?d=AQLSCYkrXOMcHs3zKnw-fE5Uhj4wM06rEgvwcoxnRwDy4EcQdWqu7HSa8JF3wjfoZfLh6mZa4gP5N1FDY8ofuqucdP-Gans-GhrVlvTICZP5hy4rG-Qvg7XV1O0hUwGrCq_tarMuxv7kEacb7zNqhZb8"
+             onerror="this.style.background='#F4F5F7';" alt="AMB1 CN06">
+        <div class="preview-label">Verified + Bob · 快速提款</div>
+      </div>
+      <div class="ads-kpi-section">
+        <div class="kpi-group-label">流量层</div>
+        <div class="ads-kpi-row">
+          <div class="ads-kpi"><div class="kpi-label">Ads Spend</div><div class="kpi-value">$160.42</div></div>
+          <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">8,008</div></div>
+          <div class="ads-kpi"><div class="kpi-label">Reach</div><div class="kpi-value">6,008</div></div>
+          <div class="ads-kpi"><div class="kpi-label">Link Click</div><div class="kpi-value">54</div></div>
+          <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value orange">0.67%</div></div>
+        </div>
+        <div class="kpi-group-label">转化层（_adj）</div>
+        <div class="ads-kpi-row">
+          <div class="ads-kpi"><div class="kpi-label">REG_adj</div><div class="kpi-value">4</div></div>
+          <div class="ads-kpi"><div class="kpi-label">FDC_adj</div><div class="kpi-value red">3 <span class="fraud-badge">全Fraud</span></div></div>
+          <div class="ads-kpi"><div class="kpi-label">FDA_adj</div><div class="kpi-value orange">RM 400</div><div class="kpi-sub">原始 FDA RM100</div></div>
+          <div class="ads-kpi"><div class="kpi-label">FDCR_adj</div><div class="kpi-value orange">75%</div></div>
+          <div class="ads-kpi"><div class="kpi-label">D1A_adj</div><div class="kpi-value green">RM 1,775</div></div>
+        </div>
+        <div class="kpi-group-label">ROI 层</div>
+        <div class="ads-kpi-row">
+          <div class="ads-kpi"><div class="kpi-label">AFDA_adj</div><div class="kpi-value">RM 133</div></div>
+          <div class="ads-kpi"><div class="kpi-label">CPA_adj</div><div class="kpi-value red">$53.47</div></div>
+          <div class="ads-kpi"><div class="kpi-label">FD Ads Rate</div><div class="kpi-value green">0.401</div></div>
+          <div class="ads-kpi"><div class="kpi-label">SDA_adj</div><div class="kpi-value green">RM 1,375</div><div class="kpi-sub">5/28 续存</div></div>
+          <div class="ads-kpi"><div class="kpi-label">GGR_adj</div><div class="kpi-value green">RM 1,750</div></div>
+        </div>
+        <div class="kpi-group-label">D7 留存（5/27、5/28 FDC 均为 Fraud，不纳入留存评估）</div>
+        <div class="ads-kpi-row" style="grid-template-columns:repeat(3,1fr)">
+          <div class="ads-kpi"><div class="kpi-label">D7R_adj</div><div class="kpi-value red">— (Fraud)</div></div>
+          <div class="ads-kpi"><div class="kpi-label">D7CR_adj</div><div class="kpi-value red">— (Fraud)</div></div>
+          <div class="ads-kpi"><div class="kpi-label">D15R_adj</div><div class="kpi-value orange">—</div><div class="kpi-sub">未成熟</div></div>
+        </div>
+        <div class="ads-tag-row">
+          <span class="lozenge lozenge-gray">Active 7天</span>
+          <span class="lozenge lozenge-red">FDC_adj 全数 Fraud</span>
+          <span class="lozenge lozenge-green">GGR_adj RM1,750（存量玩家驱动）</span>
+          <span class="lozenge lozenge-green">FD Ads Rate 0.401</span>
+        </div>
+      </div>
+    </div>
+    <div style="padding:8px 14px;border-top:1px solid #DFE1E6;background:#FAFBFC;">
+      <div style="font-size:11px;color:#172B4D;">
+        AMB1_CN06（Verified + Bob 快速提款视频）连续 7 天投放，FD Ads Rate 0.401 低于 1 代表已回本，
+        但 3 名 FDC_adj 全为 Fraud Player，实质有效获客为零。5/28 单日 SDA_adj RM1,375、GGR_adj RM1,730 来自同一玩家大额续存，属存量行为。
+        历史上（W19 5/14）该素材 D7A RM2,058、D15A RM2,258，留存价值极高——需密切监测非 Fraud 玩家的留存表现。
+      </div>
+    </div>
+  </div>
+
+  <!-- ② AMB3_CN10 - 次高花费，唯一有效FDC -->
+  <div class="ads-card has-fdc">
+    <div class="ads-card-header">
+      <div class="ads-name">MYR_INZ9_TRSA_VD_AMB3_CN10</div>
+      <span class="lozenge lozenge-purple">VD 视频</span>
+      <span class="lozenge lozenge-green">✓ 本周唯一有效 FDC</span>
+    </div>
+    <div class="ads-card-body">
+      <div class="ads-preview">
+        <img src="https://www.facebook.com/ads/image/?d=AQL-wewWbXT-4B8Q7zGZ0fRCV6n5G7IFreoCKbIOsdWHtuK235-6sdPlH9mGHE2phW4X70_cwc3j-OnhbhG-hu5U74jOc8t4e8QWMPrFCIUGIJUxuYr5Mxf4uBO4DgLqgYKMOLP1MmdVunImVIcpZhZY"
+             onerror="this.style.background='#F4F5F7';" alt="AMB3 CN10">
+        <div class="preview-label">Ah Fa + FIFA 主题</div>
+      </div>
+      <div class="ads-kpi-section">
+        <div class="kpi-group-label">流量层</div>
+        <div class="ads-kpi-row">
+          <div class="ads-kpi"><div class="kpi-label">Ads Spend</div><div class="kpi-value">$128.84</div></div>
+          <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">4,347</div></div>
+          <div class="ads-kpi"><div class="kpi-label">Reach</div><div class="kpi-value">3,566</div></div>
+          <div class="ads-kpi"><div class="kpi-label">Link Click</div><div class="kpi-value">26</div></div>
+          <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value orange">0.60%</div></div>
+        </div>
+        <div class="kpi-group-label">转化层（_adj）</div>
+        <div class="ads-kpi-row">
+          <div class="ads-kpi"><div class="kpi-label">REG_adj</div><div class="kpi-value">4</div></div>
+          <div class="ads-kpi"><div class="kpi-label">FDC_adj</div><div class="kpi-value green">1</div><div class="kpi-sub">非 Fraud ✓</div></div>
+          <div class="ads-kpi"><div class="kpi-label">FDA_adj</div><div class="kpi-value orange">RM 50</div></div>
+          <div class="ads-kpi"><div class="kpi-label">FDCR_adj</div><div class="kpi-value red">25%</div></div>
+          <div class="ads-kpi"><div class="kpi-label">D1A_adj</div><div class="kpi-value orange">RM 100</div></div>
+        </div>
+        <div class="kpi-group-label">ROI 层</div>
+        <div class="ads-kpi-row">
+          <div class="ads-kpi"><div class="kpi-label">AFDA_adj</div><div class="kpi-value orange">RM 50</div></div>
+          <div class="ads-kpi"><div class="kpi-label">CPA_adj</div><div class="kpi-value red">$128.84</div></div>
+          <div class="ads-kpi"><div class="kpi-label">FD Ads Rate</div><div class="kpi-value red">2.577</div></div>
+          <div class="ads-kpi"><div class="kpi-label">SDA_adj</div><div class="kpi-value orange">RM 50</div></div>
+          <div class="ads-kpi"><div class="kpi-label">GGR_adj</div><div class="kpi-value green">RM 149.71</div></div>
+        </div>
+        <div class="kpi-group-label">D7 留存（5/29 FDC · 今天 6/3 · 差 5 天，D7 未成熟）</div>
+        <div class="ads-kpi-row" style="grid-template-columns:repeat(3,1fr)">
+          <div class="ads-kpi"><div class="kpi-label">D7R_adj</div><div class="kpi-value orange">—</div><div class="kpi-sub"><span class="lozenge lozenge-blue" style="font-size:9px;">未成熟·6/5</span></div></div>
+          <div class="ads-kpi"><div class="kpi-label">D7CR_adj</div><div class="kpi-value orange">—</div></div>
+          <div class="ads-kpi"><div class="kpi-label">D15R_adj</div><div class="kpi-value orange">—</div><div class="kpi-sub"><span class="lozenge lozenge-blue" style="font-size:9px;">未成熟</span></div></div>
+        </div>
+        <div class="ads-tag-row">
+          <span class="lozenge lozenge-gray">Active 6天</span>
+          <span class="lozenge lozenge-green">唯一非 Fraud FDC</span>
+          <span class="lozenge lozenge-red">FD Ads Rate 2.577（超标）</span>
+          <span class="lozenge lozenge-yellow">GGR_adj RM150（同日存量 RM100）</span>
+        </div>
+      </div>
+    </div>
+    <div style="padding:8px 14px;border-top:1px solid #DFE1E6;background:#FAFBFC;">
+      <div style="font-size:11px;color:#172B4D;">
+        AMB3_CN10（Ah Fa + FIFA 主题）本周 6 天投放，唯一有效 FDC（5/29，FDA RM50，非 Fraud），
+        但 FD Ads Rate 2.577 严重超标（目标 &lt;0.7）；REG_adj 4 人但 FDCR 仅 25%，
+        注册后付费意愿较低。D7 留存于 6/5 成熟，届时评估是否有续存价值。
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ GIF_AMB3_CN03 - 有花费无FDC -->
+  <div class="ads-card no-conv">
+    <div class="ads-card-header">
+      <div class="ads-name">MYR_INZ9_TRSA_GIF_AMB3_CN03</div>
+      <span class="lozenge lozenge-blue">GIF 动图</span>
+      <span class="lozenge lozenge-red">✗ 有花费·零FDC_adj</span>
+    </div>
+    <div class="ads-card-body">
+      <div class="ads-preview">
+        <img src="https://inz9-huat.com/INZ9_Pbi_report_assets/MYR_INZ9_TRSA_GIF_AMB3_CN03.jpg"
+             onerror="this.style.background='#F4F5F7';" alt="GIF AMB3 CN03">
+        <div class="preview-label">Ah Fa + VIP Migration</div>
+      </div>
+      <div class="ads-kpi-section">
+        <div class="kpi-group-label">流量层</div>
+        <div class="ads-kpi-row">
+          <div class="ads-kpi"><div class="kpi-label">Ads Spend</div><div class="kpi-value orange">$89.51</div></div>
+          <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">2,066</div></div>
+          <div class="ads-kpi"><div class="kpi-label">Reach</div><div class="kpi-value">1,636</div></div>
+          <div class="ads-kpi"><div class="kpi-label">Link Click</div><div class="kpi-value">23</div></div>
+          <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value green">1.11%</div></div>
+        </div>
+        <div class="kpi-group-label">转化层</div>
+        <div class="ads-kpi-row">
+          <div class="ads-kpi"><div class="kpi-label">REG_adj</div><div class="kpi-value orange">1</div><div class="kpi-sub">零花费归因</div></div>
+          <div class="ads-kpi"><div class="kpi-label">FDC_adj</div><div class="kpi-value red">0</div></div>
+          <div class="ads-kpi"><div class="kpi-label">FDA_adj</div><div class="kpi-value red">RM 0</div></div>
+          <div class="ads-kpi"><div class="kpi-label">GGR_adj</div><div class="kpi-value red">RM 0</div></div>
+          <div class="ads-kpi"><div class="kpi-label">CPA_adj</div><div class="kpi-value red">—</div></div>
+        </div>
+        <div class="ads-tag-row">
+          <span class="lozenge lozenge-gray">Active 3天（5/25、5/30、5/31）</span>
+          <span class="lozenge lozenge-green">CTR 最高 1.11%</span>
+          <span class="lozenge lozenge-red">零 REG 零 FDC</span>
+          <span class="lozenge lozenge-red">$89.51 无回报</span>
+        </div>
+      </div>
+    </div>
+    <div style="padding:8px 14px;border-top:1px solid #DFE1E6;background:#FAFBFC;">
+      <div style="font-size:11px;color:#172B4D;">
+        GIF_AMB3_CN03（Ah Fa + VIP Migration 动图）本周 CTR 1.11% 为全组最高，点击率表现优秀，
+        但完全无 REG_adj 与 FDC_adj 产出，$89.51 花费零回报。W20 该素材曾有 FDC_adj 4 人，本周突降为零，
+        建议检查落地页转化路径是否异常，或受众定向是否偏移。
+      </div>
+    </div>
+  </div>
+
+  <!-- ④ AMB1_CN10 - 新素材 Active=2天 -->
+  <div class="ads-card new-ads">
+    <div class="ads-card-header">
+      <div class="ads-name">MYR_INZ9_TRSA_VD_AMB1_CN10</div>
+      <span class="lozenge lozenge-purple">VD 视频</span>
+      <span class="lozenge lozenge-blue">🆕 新素材 Active 2天</span>
+    </div>
+    <div class="ads-card-body">
+      <div class="ads-preview">
+        <img src="https://inz9-huat.com/INZ9_Pbi_report_assets/MYR_INZ9_TRSA_VD_AMB1_CN09.jpg"
+             onerror="this.style.background='#F4F5F7';" alt="AMB1 CN10">
+        <div class="preview-label">Bob + 2388（新版）</div>
+      </div>
+      <div class="ads-kpi-section">
+        <div class="kpi-group-label">流量层</div>
+        <div class="ads-kpi-row">
+          <div class="ads-kpi"><div class="kpi-label">Ads Spend</div><div class="kpi-value">$28.49</div></div>
+          <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">1,468</div></div>
+          <div class="ads-kpi"><div class="kpi-label">Reach</div><div class="kpi-value">1,110</div></div>
+          <div class="ads-kpi"><div class="kpi-label">Link Click</div><div class="kpi-value">8</div></div>
+          <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value orange">0.54%</div></div>
+        </div>
+        <div class="kpi-group-label">转化层</div>
+        <div class="ads-kpi-row">
+          <div class="ads-kpi"><div class="kpi-label">REG_adj</div><div class="kpi-value orange">1</div></div>
+          <div class="ads-kpi"><div class="kpi-label">FDC_adj</div><div class="kpi-value red">0</div></div>
+          <div class="ads-kpi"><div class="kpi-label">FDCR_adj</div><div class="kpi-value red">0%</div></div>
+          <div class="ads-kpi"><div class="kpi-label">GGR_adj</div><div class="kpi-value">RM 0</div></div>
+          <div class="ads-kpi"><div class="kpi-label">CPA_adj</div><div class="kpi-value">—</div></div>
+        </div>
+        <div class="ads-tag-row">
+          <span class="lozenge lozenge-blue">新素材·2 天（5/30、5/31）</span>
+          <span class="lozenge lozenge-yellow">REG_adj 1 但无 FDC</span>
+          <span class="lozenge lozenge-blue">数据不足，待观察</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑤ AMB4_EN01 - 有花费无FDC，仅1天 -->
+  <div class="ads-card no-conv">
+    <div class="ads-card-header">
+      <div class="ads-name">MYR_INZ9_TRSA_VD_AMB4_EN01</div>
+      <span class="lozenge lozenge-purple">VD 视频（英文）</span>
+      <span class="lozenge lozenge-red">✗ 零FDC · 仅1天</span>
+    </div>
+    <div class="ads-card-body">
+      <div class="ads-preview">
+        <img src="https://www.facebook.com/ads/image/?d=AQLW-P9odLUY9hEfFXtAXNBK22iV1IZ1TuZJU6YFJlNdnSVxXAi8gipmRuE1gPYVlS2-1Xtc9oXCqnJwd64msKzZylMfw2jvk7HrKCEg2IfqndSmKHoM98aMrF6eXtyll60BN-xh4b3iOv5Sct2RVpcc"
+             onerror="this.style.background='#F4F5F7';" alt="AMB4 EN01">
+        <div class="preview-label">Ryan Giggs + Welcome Bonus</div>
+      </div>
+      <div class="ads-kpi-section">
+        <div class="kpi-group-label">流量层（仅 5/25 一天）</div>
+        <div class="ads-kpi-row">
+          <div class="ads-kpi"><div class="kpi-label">Ads Spend</div><div class="kpi-value">$12.86</div></div>
+          <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">2,717</div></div>
+          <div class="ads-kpi"><div class="kpi-label">Reach</div><div class="kpi-value">2,251</div></div>
+          <div class="ads-kpi"><div class="kpi-label">Link Click</div><div class="kpi-value">8</div></div>
+          <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value red">0.29%</div></div>
+        </div>
+        <div class="kpi-group-label">转化层</div>
+        <div class="ads-kpi-row">
+          <div class="ads-kpi"><div class="kpi-label">REG_adj</div><div class="kpi-value red">0</div></div>
+          <div class="ads-kpi"><div class="kpi-label">FDC_adj</div><div class="kpi-value red">0</div></div>
+          <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value green">$4.73</div><div class="kpi-sub">曝光成本极低</div></div>
+          <div class="ads-kpi"><div class="kpi-label">GGR_adj</div><div class="kpi-value">RM 0</div></div>
+          <div class="ads-kpi"><div class="kpi-label">CPA_adj</div><div class="kpi-value">—</div></div>
+        </div>
+        <div class="ads-tag-row">
+          <span class="lozenge lozenge-gray">仅投放 1 天</span>
+          <span class="lozenge lozenge-red">CTR 低 0.29%</span>
+          <span class="lozenge lozenge-green">CPM $4.73 最低</span>
+          <span class="lozenge lozenge-yellow">W20 有 1 Fraud FDC</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ 六 · 素材核心指标对比排名 ══ -->
+<h2>六 · 素材核心指标对比排名</h2>
+<p class="section-note">AMB1_CN10（Active 2天）、AMB4_EN01（Active 1天）为新/极短素材，不纳入正式排名 · 按 FDC_adj 降序，Fraud 单独标注</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th><th>素材</th><th>Ad Type</th><th>描述</th>
+      <th>花费($)</th><th>FDC_adj</th><th>Fraud</th><th>有效FDC</th>
+      <th>FDA_adj(RM)</th><th>FDCR_adj</th><th>AFDA(RM)</th>
+      <th>FD Ads Rate</th><th>GGR_adj(RM)</th><th>评级</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td><td class="code">AMB1_CN06</td><td>VD</td><td>Verified + Bob 快速提款</td>
+      <td class="num-right">$160.42</td>
+      <td class="num-right">3</td>
+      <td class="num-right"><span class="lozenge lozenge-red">3/3</span></td>
+      <td class="num-right">0</td>
+      <td class="num-right">RM 400</td>
+      <td class="num-right">75%</td>
+      <td class="num-right">RM 133</td>
+      <td class="num-right" style="color:#00875A;">0.401</td>
+      <td class="num-right" style="color:#00875A;">RM 1,750</td>
+      <td><span class="lozenge lozenge-red">Fraud 警示</span></td>
+    </tr>
+    <tr>
+      <td colspan="14" class="rank-img-row">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <img src="https://www.facebook.com/ads/image/?d=AQLSCYkrXOMcHs3zKnw-fE5Uhj4wM06rEgvwcoxnRwDy4EcQdWqu7HSa8JF3wjfoZfLh6mZa4gP5N1FDY8ofuqucdP-Gans-GhrVlvTICZP5hy4rG-Qvg7XV1O0hUwGrCq_tarMuxv7kEacb7zNqhZb8"
+               class="rank-thumb" onerror="this.style.background='#F4F5F7';" alt="AMB1_CN06">
+          <span style="font-size:12px;color:#5E6C84;">花费最高（$160.42），FD Ads Rate 0.401 已回本，但 FDC_adj 3 人全为 Fraud。5/28 存量玩家大额 SDA RM1,375 推高 GGR，属历史玩家贡献而非新客。历史（W19）同素材 D7A RM2,058，潜力极高，需监控非 Fraud 新客留存。</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td><td class="code">AMB3_CN10</td><td>VD</td><td>Ah Fa + FIFA 主题</td>
+      <td class="num-right">$128.84</td>
+      <td class="num-right">1</td>
+      <td class="num-right"><span class="lozenge lozenge-green">0/1</span></td>
+      <td class="num-right">1</td>
+      <td class="num-right">RM 50</td>
+      <td class="num-right">25%</td>
+      <td class="num-right">RM 50</td>
+      <td class="num-right" style="color:#DE350B;">2.577</td>
+      <td class="num-right" style="color:#00875A;">RM 149.71</td>
+      <td><span class="lozenge lozenge-yellow">观察</span></td>
+    </tr>
+    <tr>
+      <td colspan="14" class="rank-img-row">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <img src="https://www.facebook.com/ads/image/?d=AQL-wewWbXT-4B8Q7zGZ0fRCV6n5G7IFreoCKbIOsdWHtuK235-6sdPlH9mGHE2phW4X70_cwc3j-OnhbhG-hu5U74jOc8t4e8QWMPrFCIUGIJUxuYr5Mxf4uBO4DgLqgYKMOLP1MmdVunImVIcpZhZY"
+               class="rank-thumb" onerror="this.style.background='#F4F5F7';" alt="AMB3_CN10">
+          <span style="font-size:12px;color:#5E6C84;">本周唯一有效 FDC（非 Fraud），但 FD Ads Rate 2.577（目标 &lt;0.7），CPA $128.84 偏高；FDCR 25%，REG 后付费转化率偏低。D7 将于 6/5 成熟，届时评估留存价值。</span>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>3</td><td class="code">GIF_AMB3_CN03</td><td>GIF</td><td>Ah Fa + VIP Migration</td>
+      <td class="num-right">$89.51</td>
+      <td class="num-right">0</td>
+      <td class="num-right">—</td>
+      <td class="num-right">0</td>
+      <td class="num-right">—</td>
+      <td class="num-right">—</td>
+      <td class="num-right">—</td>
+      <td class="num-right">—</td>
+      <td class="num-right">—</td>
+      <td><span class="lozenge lozenge-red">零转化</span></td>
+    </tr>
+    <tr>
+      <td colspan="14" class="rank-img-row">
+        <div style="display:flex;align-items:center;gap:10px;">
+          <img src="https://inz9-huat.com/INZ9_Pbi_report_assets/MYR_INZ9_TRSA_GIF_AMB3_CN03.jpg"
+               class="rank-thumb" onerror="this.style.background='#F4F5F7';" alt="GIF_AMB3">
+          <span style="font-size:12px;color:#5E6C84;">CTR 1.11% 最高但零转化，$89.51 全数浪费。W20 曾有 4 FDC_adj，本周骤降为零，疑似落地页或受众问题，需立即排查。</span>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="panel warning">
+  <div class="panel-icon">⚠️</div>
+  <div class="panel-body">
+    <strong>素材排名总结：本周最大问题是 Fraud 比例过高（75%），GIF_AMB3 CTR 优秀但转化断链。</strong>
+    本周 3 支活跃投放素材（AMB1_CN06、AMB3_CN10、GIF_AMB3_CN03）合计花费 $379.07，
+    有效 FDC 仅 1 人；Fraud 清洗后真实 CPA 相当于 $420.12 / 1 人 = $420.12，远超健康水平。
+    GIF_AMB3 CTR 高但零转化，建议优先检查落地页路径；AMB1_CN06 历史留存价值高，建议维持投放但监控 Fraud 率。
+  </div>
+</div>
+
+<!-- ══ 七 · 玩家留存层数据 ══ -->
+<h2>七 · 玩家留存层数据</h2>
+<p class="section-note">⚠️ D30 系列不纳入本报告 · D7CR_adj / D15CR_adj 分母为 FDC_adj · Fraud Player 须排除在留存评估之外</p>
+
+<h3>子节 A：本周（W21，2026-05-25 至 05-31）首存玩家留存</h3>
+<p class="section-note">报告生成日：2026-06-03（周三）· W21 所有 FDC 均未满 D7 成熟条件（最早 5/27，差 0 天；5/28 差 1 天；5/29 差 2 天）</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>素材</th><th>首存日</th><th>FDC_adj</th><th>Fraud</th><th>FDA_adj(RM)</th>
+      <th>D7R_adj</th><th>D7CR_adj</th><th>D7A_adj(RM)</th>
+      <th>D15R_adj</th><th>D15CR_adj</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="code">AMB1_CN06</td><td>5/27</td><td>1</td>
+      <td><span class="lozenge lozenge-red">Fraud</span></td><td>RM 20</td>
+      <td>—<br><span class="lozenge lozenge-gray" style="font-size:9px;">排除 Fraud</span></td>
+      <td>—</td><td>—</td><td>—</td><td>—</td>
+    </tr>
+    <tr>
+      <td class="code">AMB1_CN06</td><td>5/28</td><td>2</td>
+      <td><span class="lozenge lozenge-red">Fraud ×2</span></td><td>RM 380</td>
+      <td>—<br><span class="lozenge lozenge-gray" style="font-size:9px;">排除 Fraud</span></td>
+      <td>—</td><td>—</td><td>—</td><td>—</td>
+    </tr>
+    <tr>
+      <td class="code">AMB3_CN10</td><td>5/29</td><td>1</td>
+      <td><span class="lozenge lozenge-green">非 Fraud ✓</span></td><td>RM 50</td>
+      <td>—<br><span class="lozenge lozenge-blue" style="font-size:9px;">未成熟·6/5</span></td>
+      <td>—</td><td>—</td>
+      <td>—<br><span class="lozenge lozenge-blue" style="font-size:9px;">未成熟</span></td>
+      <td>—</td>
+    </tr>
+    <tr class="total-row">
+      <td colspan="2"><strong>合计（有效 FDC）</strong></td>
+      <td><strong>1</strong></td><td>—</td><td><strong>RM 50</strong></td>
+      <td colspan="5"><strong>全数未成熟，正式评估于下周报告（6/8）</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>子节 B：上上周（W19，2026-05-11 至 05-17）首存玩家留存（参考基准）</h3>
+<p class="section-note">W19 D7 全数成熟（距今 17–23 天）· D15 部分成熟 · Fraud 已排除</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>素材</th><th>首存周期</th><th>FDC_adj</th><th>FDA_adj(RM)</th>
+      <th>D7CR_adj ✓</th><th>D7A_adj(RM) ✓</th>
+      <th>D15CR_adj</th><th>D15A_adj(RM)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="code">AMB1_CN06</td><td>5/14</td><td>1</td><td>RM 30</td>
+      <td><span class="lozenge lozenge-green">100% ✓</span></td><td style="color:#00875A;font-weight:600;">RM 2,058</td>
+      <td><span class="lozenge lozenge-green">100% ✓</span></td><td style="color:#00875A;font-weight:600;">RM 2,258</td>
+    </tr>
+    <tr>
+      <td class="code">GIF_AMB3_CN03</td><td>5/15</td><td>2</td><td>RM 200</td>
+      <td><span class="lozenge lozenge-blue">—</span></td>
+      <td><span class="lozenge lozenge-blue" style="font-size:9px;">未成熟</span></td>
+      <td><span class="lozenge lozenge-blue">—</span></td>
+      <td><span class="lozenge lozenge-blue" style="font-size:9px;">未成熟</span></td>
+    </tr>
+    <tr>
+      <td class="code">GIF_AMB3_CN03</td><td>5/16</td><td>1</td><td>RM 50</td>
+      <td><span class="lozenge lozenge-green">100% ✓</span></td><td style="color:#00875A;font-weight:600;">RM 800</td>
+      <td><span class="lozenge lozenge-green">100% ✓</span></td><td style="color:#00875A;font-weight:600;">RM 1,409</td>
+    </tr>
+    <tr>
+      <td class="code">AMB1_CN06</td><td>5/16</td><td>1</td><td>RM 300</td>
+      <td><span class="lozenge lozenge-blue">—</span></td>
+      <td><span class="lozenge lozenge-blue" style="font-size:9px;">未成熟</span></td>
+      <td><span class="lozenge lozenge-blue">—</span></td>
+      <td><span class="lozenge lozenge-blue" style="font-size:9px;">未成熟</span></td>
+    </tr>
+    <tr class="total-row">
+      <td colspan="2"><strong>W19 合计（有效）</strong></td>
+      <td><strong>5</strong></td><td><strong>RM 580</strong></td>
+      <td colspan="2"><strong>已成熟 D7CR 100%（2/2） · D7A RM2,858</strong></td>
+      <td colspan="2"><strong>已成熟 D15CR 100%（2/2）· D15A RM3,667</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="panel info">
+  <div class="panel-icon">📈</div>
+  <div class="panel-body">
+    <strong>留存层分析：W19 基准优秀（D7CR 100%，D7A RM2,858），W21 有效 FDC 仅 1 人，留存价值待评估。</strong>
+    W19 AMB1_CN06（5/14）和 GIF_AMB3_CN03（5/16）D7CR 均 100%，D7A 合计 RM2,858，
+    说明这两支素材历史上能吸引高价值、高留存的真实玩家。W21 有效 FDC 仅 AMB3_CN10 的 1 人（RM50 FDA），
+    D7 于 6/5 成熟后将评估其留存潜力。GIF_AMB3（5/15 FDC 2 人）D15 尚未成熟，下周补充。
+  </div>
+</div>
+
+<!-- ══ 八 · 核心结论与建议 ══ -->
+<h2>八 · 核心结论与建议</h2>
+
+<div class="panel error">
+  <div class="panel-icon">🚨</div>
+  <div class="panel-body">
+    <strong>整体 ROI 诊断：Fraud 污染严重，有效新客极少，本周实质 CPA 高达 $420。</strong>
+    本周花费 $420.12，FDC_adj 4 人中 3 人为 Fraud（75%），REG_adj 10 人，有效 FDC 仅 1 人（AMB3_CN10 5/29），
+    实质 CPA = $420.12，FD Ads Rate（基于有效 FDC）= $420 ÷ RM50 = 8.4（目标 &lt;0.7，超标 12 倍）。
+    GGR 全渠道 RM5,242 主要由存量老玩家贡献（5/28 单玩家 SDA RM1,375 + 5/29 老会员 TDA RM1,000），
+    不能视为本周广告投放的转化成果。
+  </div>
+</div>
+
+<div class="panel error">
+  <div class="panel-icon">❌</div>
+  <div class="panel-body">
+    <strong>最差素材：GIF_AMB3_CN03 花费 $89.51，零 REG 零 FDC，CTR 高但漏斗完全断链。</strong>
+    GIF_AMB3_CN03 CTR 1.11% 为本周最高，显示创意吸引力尚可，但 23 次 Link Click 之后
+    无任何 REG_adj 或 FDC_adj 产出，Link Click → 注册转化完全断链。
+    W20 同素材 FDC_adj 4 人，本周骤降为零，强烈建议立即排查落地页是否正常加载与转化。
+  </div>
+</div>
+
+<div class="panel warning">
+  <div class="panel-icon">📉</div>
+  <div class="panel-body">
+    <strong>AMB1_CN06 Fraud 率持续偏高，需与风控团队联动处理。</strong>
+    AMB1_CN06 本周 FDC_adj 3 人全为 Fraud，W20 也有 Fraud 记录。该素材历史留存价值极高（W19 D7A RM2,058），
+    建议不停投，但应与风控团队检查该素材归因的流量来源（受众定向是否混入 bot 流量），
+    并优化受众排除规则以降低 Fraud 比例，从而释放该素材的真实价值。
+  </div>
+</div>
+
+<div class="panel success">
+  <div class="panel-icon">✅</div>
+  <div class="panel-body">
+    <strong>AMB3_CN10 唯一有效 FDC，D7 将于 6/5 成熟，是下周评估的关键观测点。</strong>
+    AMB3_CN10（5/29 FDC RM50）是本周唯一非 Fraud 有效首存玩家，SDA RM50，GGR RM100.06，
+    D1A RM100 显示首存后当日有续存行为。D7 窗口 6/5 成熟，若 D7CR 良好，建议加大该素材投放力度；
+    若 D7CR = 0，则评估是否切换至其他 Ah Fa 系列素材测试。
+  </div>
+</div>
+
+<div class="panel info">
+  <div class="panel-icon">🆕</div>
+  <div class="panel-body">
+    <strong>新素材 AMB1_CN10 初步数据：REG 1 人但无 FDC，仅 2 天数据，需持续观察。</strong>
+    AMB1_CN10（Bob + 2388 新版）于 5/30–5/31 首次投放，花费 $28.49，REG_adj 1 人但无 FDC，
+    CTR 0.54% 偏低。素材方向（Bob + 2388 奖金）历史有一定效果，建议维持投放 3–5 天再做评估，
+    下周报告纳入正式分析。
+  </div>
+</div>
+
+<div class="panel info">
+  <div class="panel-icon">💡</div>
+  <div class="panel-body">
+    <strong>5/28 单日 GGR 异常高峰：AMB1_CN06 存量玩家单日 SDA RM1,375，属个体行为非常态。</strong>
+    5/28 AMB1_CN06 GGR_adj RM1,730 中，RM1,375 来自同一玩家当日续存（SDA），
+    属历史老玩家一次性大额投入，与当日广告投放无直接关联。
+    分析 ROI 时须剔除此项异常，本周广告直接产生的 GGR 约 RM250（AMB3_CN10 RM100 + 当日少量新客 GGR）。
+  </div>
+</div>
+
+<hr>
+<p style="font-size:11px;color:#6B778C;text-align:center;">
+  【INZ9 分析】本报告由 Claude AI 自动生成 · 数据来源：Supabase <code>inz9_campaign_result</code> · traffic_channel = MKT<br>
+  报告生成时间：2026年6月3日（周三）· 汇报周期：2026年5月25日（周一）—— 5月31日（周日）（W21）· 货币：$ = Ads Spend · RM = 存款及转化金额<br>
+  留存层展示 W21（本周，全数未成熟，有效 FDC 1人）与 W19（上上周，参考基准） · D30 系列不纳入本报告
+</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const labels = ['5/25 周一','5/26 周二','5/27 周三','5/28 周四','5/29 周五','5/30 周六','5/31 周日'];
+
+// Chart 1: Spend / FDA_adj / GGR_adj
+new Chart(document.getElementById('dailyChart'), {
+  type: 'bar',
+  data: {
+    labels,
+    datasets: [
+      { label: 'Ads Spend($)', data: [78.26, 10.05, 52.53, 31.41, 55.10, 75.07, 117.70], backgroundColor: '#0052CC', borderRadius: 3, barPercentage: 0.6 },
+      { label: 'FDA_adj(RM)', data: [0, 0, 20, 380, 50, 0, 0], backgroundColor: '#FF8B00', borderRadius: 3, barPercentage: 0.6 },
+      { label: 'GGR_adj全渠道(RM)', data: [368.71, 88.00, -106.28, 732.41, 1059.77, 943.73, 2155.46], borderColor: '#00875A', backgroundColor: 'rgba(0,135,90,0.1)', borderWidth: 2, type: 'line', fill: false, tension: 0.3, pointRadius: 4, pointBackgroundColor: '#00875A' }
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: { legend: { position: 'top', labels: { font: { size: 11 }, color: '#5E6C84', boxWidth: 12, padding: 14 } } },
+    scales: {
+      x: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { color: '#5E6C84', font: { size: 11 } } },
+      y: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { color: '#5E6C84', font: { size: 11 } }, title: { display: true, text: 'Amount', color: '#5E6C84', font: { size: 11 } } }
+    }
+  }
+});
+
+// Chart 2: Link Click / REG_adj / FDC_adj
+new Chart(document.getElementById('funnelChart'), {
+  type: 'bar',
+  data: {
+    labels,
+    datasets: [
+      { label: 'Link Click', data: [34, 4, 17, 8, 11, 19, 26], backgroundColor: '#B5D4F4', borderRadius: 3, barPercentage: 0.6 },
+      { label: 'REG_adj',    data: [1, 0, 3, 2, 1, 2, 1],    backgroundColor: '#0052CC', borderRadius: 3, barPercentage: 0.6 },
+      { label: 'FDC_adj',    data: [0, 0, 1, 2, 1, 0, 0],    backgroundColor: '#00875A', borderRadius: 3, barPercentage: 0.6 },
+    ]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    interaction: { mode: 'index', intersect: false },
+    plugins: { legend: { position: 'top', labels: { font: { size: 11 }, color: '#5E6C84', boxWidth: 12, padding: 14 } } },
+    scales: {
+      x: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { color: '#5E6C84', font: { size: 11 } } },
+      y: { grid: { color: 'rgba(0,0,0,0.04)' }, ticks: { color: '#5E6C84', font: { size: 11 }, stepSize: 2 }, title: { display: true, text: '人数', color: '#5E6C84', font: { size: 11 } } }
+    }
+  }
+});
+</script>
+</body>
+</html>
