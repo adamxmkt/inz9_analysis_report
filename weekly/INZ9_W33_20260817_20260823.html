@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>INZ9 周报 · 2026第33周</title>
+<style>  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1.6;color:#172B4D;max-width:1020px;margin:0 auto;padding:28px 36px;background:#fff}
+  .page-title{font-size:24px;font-weight:700;color:#172B4D;padding-bottom:10px;border-bottom:3px solid #6554C0;margin-bottom:6px}
+  .page-meta{font-size:12px;color:#6B778C;margin-bottom:24px}
+  h2{font-size:16px;font-weight:700;color:#172B4D;margin:26px 0 10px;padding-bottom:6px;border-bottom:1px solid #DFE1E6}
+  h3{font-size:13px;font-weight:700;color:#5E6C84;margin:14px 0 7px;text-transform:uppercase;letter-spacing:.04em}
+  .panel{border-radius:4px;padding:10px 14px;margin:8px 0;display:flex;gap:9px;align-items:flex-start;font-size:13px;line-height:1.55}
+  .pi{font-size:14px;flex-shrink:0;margin-top:1px}.pb{flex:1}
+  .panel.info{background:#DEEBFF;border-left:4px solid #0052CC}
+  .panel.warn{background:#FFFAE6;border-left:4px solid #FF8B00}
+  .panel.err{background:#FFEBE6;border-left:4px solid #DE350B}
+  .panel.ok{background:#E3FCEF;border-left:4px solid #00875A}
+  .panel strong{font-weight:600}
+  .mrow{display:flex;gap:8px;margin:10px 0;flex-wrap:wrap}
+  .mc{flex:1;min-width:120px;background:#F4F5F7;border-radius:6px;padding:11px 13px}
+  .mc .lb{font-size:10px;color:#6B778C;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+  .mc .val{font-size:19px;font-weight:700;color:#172B4D;line-height:1.2}
+  .mc .sub{font-size:10px;color:#6B778C;margin-top:3px}
+  .wow{display:block;font-size:10px;font-weight:700;padding:2px 6px;border-radius:3px;margin-top:5px}
+  .wu{background:#E3FCEF;color:#006644}.wd{background:#FFEBE6;color:#BF2600}.wn{background:#F4F5F7;color:#5E6C84}
+  .val.g{color:#00875A}.val.r{color:#DE350B}.val.o{color:#FF8B00}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin:8px 0}
+  th{background:#F4F5F7;color:#5E6C84;font-weight:700;font-size:11px;text-align:left;padding:6px 9px;border:1px solid #DFE1E6;white-space:nowrap}
+  td{padding:6px 9px;border:1px solid #DFE1E6;vertical-align:middle}
+  tr:nth-child(even) td{background:#FAFBFC}
+  .tr td{background:#F4F5F7!important;font-weight:700}
+  .lz{display:inline-block;padding:2px 7px;border-radius:3px;font-size:11px;font-weight:600;line-height:1.6}
+  .lg{background:#E3FCEF;color:#006644}.lr{background:#FFEBE6;color:#BF2600}
+  .ly{background:#FFFAE6;color:#974F0C}.ln{background:#F4F5F7;color:#5E6C84}
+  .lb2{background:#DEEBFF;color:#0747A6}.lp{background:#EAE6FF;color:#403294}
+  .code{font-family:"SFMono-Regular",Consolas,monospace;font-size:11px;color:#5E6C84}
+  .sn{font-size:12px;color:#6B778C;margin-bottom:8px}
+  hr{border:none;border-top:1px solid #DFE1E6;margin:20px 0}
+  .chart-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:10px 0}
+  .chart-box{background:#FAFBFC;border:1px solid #DFE1E6;border-radius:6px;padding:12px 14px}
+  .chart-box h4{font-size:12px;font-weight:700;color:#5E6C84;margin:0 0 8px;text-transform:uppercase;letter-spacing:.03em}
+  .chart-legend-row{display:flex;gap:14px;font-size:11px;color:#5E6C84;margin-bottom:6px;flex-wrap:wrap}
+  .chart-legend-row span{display:flex;align-items:center;gap:5px}
+  .lb-box{width:10px;height:10px;border-radius:2px;display:inline-block}
+  .chart-wrap-sm{position:relative;height:180px}
+  .section-summary{background:#F8F9FA;border:1px solid #DFE1E6;border-radius:6px;padding:12px 15px;margin:10px 0;font-size:13px}
+  .section-summary h4{font-size:13px;font-weight:700;color:#172B4D;margin:0 0 8px}
+  .ss-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:8px}
+  .ss-item{background:#fff;border:1px solid #DFE1E6;border-radius:5px;padding:8px 10px}
+  .ss-item .s-label{font-size:10px;color:#6B778C;font-weight:600;text-transform:uppercase;margin-bottom:3px}
+  .ss-item .s-value{font-size:15px;font-weight:700;color:#172B4D}
+  .ggr-progress-box{background:#F4F5F7;border-radius:8px;padding:16px 20px;margin:10px 0}
+  .ggr-progress-box h3{margin:0 0 4px;font-size:14px;color:#172B4D}
+  .ggr-progress-box .sub-note{font-size:12px;color:#6B778C;margin-bottom:10px}
+  .progress-bar-wrap{background:#DFE1E6;border-radius:20px;height:10px;overflow:hidden;margin:8px 0 12px}
+  .progress-bar-fill{height:100%;border-radius:20px;background:#6554C0}
+  .ggr-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .ggr-card{background:#fff;border:1px solid #DFE1E6;border-radius:6px;padding:10px 13px}
+  .ggr-card .gc-label{font-size:11px;color:#6B778C;font-weight:600;margin-bottom:4px}
+  .ggr-card .gc-val{font-size:18px;font-weight:700;color:#172B4D}
+  .ads-card{border:1px solid #DFE1E6;border-radius:8px;overflow:hidden;margin-bottom:14px}
+  .ads-card.best{border-top:3px solid #00875A}.ads-card.mid{border-top:3px solid #0052CC}
+  .ads-card.warn{border-top:3px solid #FF8B00}.ads-card.newads{border-top:3px solid #6554C0}
+  .ads-card.low{border-top:3px solid #B3BAC5}
+  .ads-head{padding:9px 13px;background:#F4F5F7;border-bottom:1px solid #DFE1E6;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .ads-head .an{font-family:"SFMono-Regular",Consolas,monospace;font-size:11px;color:#172B4D;font-weight:700;flex:1}
+  .ads-body{padding:10px 14px 0}
+  .ads-meta{display:grid;grid-template-columns:90px 1fr;gap:12px}
+  .ads-img img{width:88px;height:88px;object-fit:cover;border-radius:5px;border:1px solid #DFE1E6;display:block}
+  .ads-img .il{font-size:9px;color:#6B778C;text-align:center;margin-top:3px;line-height:1.3}
+  .kpi-section{margin-bottom:8px}
+  .kpi-section .ks-label{font-size:10px;font-weight:700;color:#6B778C;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px;padding-bottom:2px;border-bottom:1px solid #EBECF0}
+  .kpi-row{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:4px}
+  .kpi-item{background:#FAFBFC;border:1px solid #EBECF0;border-radius:4px;padding:5px 8px;min-width:80px}
+  .kpi-item .kl{font-size:9px;color:#6B778C;font-weight:500;margin-bottom:2px}
+  .kpi-item .kv{font-size:14px;font-weight:700;color:#172B4D;line-height:1.2}
+  .kv.g{color:#00875A}.kv.r{color:#DE350B}.kv.o{color:#FF8B00}
+  .ads-hist{padding:8px 14px;border-top:1px solid #DFE1E6;margin-top:8px}
+  .ads-hist h5{font-size:10px;font-weight:700;color:#5E6C84;text-transform:uppercase;letter-spacing:.04em;margin:0 0 5px}
+  .hist-wrap{position:relative;height:100px}
+  .ads-note{padding:7px 14px;font-size:11px;color:#5E6C84;border-top:1px solid #DFE1E6;background:#FAFBFC}
+  .rank-table .rank-row{border:1px solid #DFE1E6;border-radius:6px;margin-bottom:10px;overflow:hidden}
+  .rank-header{display:grid;grid-template-columns:32px 90px 80px 1fr 65px 50px 65px 65px 65px 65px;gap:0;background:#F4F5F7;border-bottom:1px solid #DFE1E6;font-size:10px;font-weight:700;color:#5E6C84;text-transform:uppercase;letter-spacing:.03em}
+  .rank-header div,.rank-data div{padding:6px 8px;border-right:1px solid #DFE1E6}
+  .rank-header div:last-child,.rank-data div:last-child{border-right:none}
+  .rank-data{display:grid;grid-template-columns:32px 90px 80px 1fr 65px 50px 65px 65px 65px 65px;gap:0;font-size:12px}
+  .rank-desc{padding:8px 14px;font-size:12px;color:#5E6C84;background:#FAFBFC;border-top:1px solid #DFE1E6;line-height:1.6}
+  .grade-badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700}
+  .gb-best{background:#E3FCEF;color:#006644}.gb-mid{background:#DEEBFF;color:#0747A6}
+  .gb-warn{background:#FFFAE6;color:#974F0C}.gb-low{background:#FFEBE6;color:#BF2600}
+  .gb-new{background:#EAE6FF;color:#403294}.gb-zero{background:#F4F5F7;color:#5E6C84}
+  .s7-note{font-size:10px;color:#6B778C;font-style:italic;margin-top:2px}
+</style>
+</head>
+<body>
+
+<div class="page-title">INZ9 周报 · 2026第33周</div>
+<div class="page-meta">
+  <strong>汇报周期：</strong>2026年8月17日（周一）至 2026年8月23日（周日）&nbsp;｜&nbsp;
+  <strong>品牌：</strong>INZ9&nbsp;｜&nbsp;<strong>市场：</strong>马来西亚&nbsp;｜&nbsp;
+  <strong>货币：</strong>Ads Spend/CPA 以 $ 呈现，存款/GGR 类以 RM 呈现&nbsp;｜&nbsp;
+  <strong>生成日期：</strong>2026年8月31日（周一）
+</div>
+
+<div class="panel info">
+  <div class="pi">📊</div>
+  <div class="pb"><strong>说明：</strong>本报告实际生成日为8月31日（周一），较常规节奏晚约1周。上周（W32，8/10–8/16）几乎无付费投放（花费$5.37），全周FDC_adj=0，无法进行L2正式评估；本周（W33）D7已全数成熟（diff 8–14天），D15尚未成熟。已在三、七节按PART4 SOP逐日区分标注。</div>
+</div>
+
+<!-- ══ 一 · 周度核心数据概览 ══ -->
+<h2>一 · 周度核心数据概览</h2>
+<p class="sn">W32（8月10–16日）为对比基准 · 全部转化/留存指标使用 _adj 归因修正字段 · traffic_channel='MKT' 过滤</p>
+
+<div class="mrow">
+  <div class="mc"><div class="lb">Ads Spend</div><div class="val">$262.48</div><div class="sub">上周：$5.37</div><span class="wow wu">▲ +4787.9% vs 上周</span></div>
+  <div class="mc"><div class="lb">IMP</div><div class="val">2,970</div><div class="sub">上周：515</div><span class="wow wu">▲ +476.7% vs 上周</span></div>
+  <div class="mc"><div class="lb">Link Click</div><div class="val">86</div><div class="sub">上周：28 · CTR 2.896%</div><span class="wow wu">▲ +207.1% vs 上周</span></div>
+  <div class="mc"><div class="lb">REG_adj</div><div class="val o">6</div><div class="sub">上周：1</div><span class="wow wu">▲ +500.0% vs 上周</span></div>
+  <div class="mc"><div class="lb">FDC_adj</div><div class="val r">1</div><div class="sub">上周：0</div><span class="wow wn">— 上周基数为0</span></div>
+  <div class="mc"><div class="lb">FDA_adj</div><div class="val r">RM 50.00</div><div class="sub">上周：RM 0.00</div><span class="wow wn">— 上周基数为0</span></div>
+</div>
+<div class="mrow">
+  <div class="mc"><div class="lb">FDCR_adj</div><div class="val o">16.7%</div><div class="sub">FDC_adj 1÷REG_adj 6</div></div>
+  <div class="mc"><div class="lb">AFDA_adj</div><div class="val o">RM 50.00</div></div>
+  <div class="mc"><div class="lb">CPA_adj</div><div class="val o">$262.48</div></div>
+  <div class="mc"><div class="lb">FD Ads Rate</div><div class="val o">5.250</div></div>
+  <div class="mc"><div class="lb">GGR_adj</div><div class="val g">RM 332.92</div><div class="sub">上周：RM 3,318.53</div><span class="wow wd">▼ -90.0% vs 上周</span></div>
+  <div class="mc"><div class="lb">TDA_adj</div><div class="val g">RM 12,644.08</div><div class="sub">上周：RM 18,780.00</div><span class="wow wd">▼ -32.7% vs 上周</span></div>
+</div>
+<div class="mrow">
+  <div class="mc"><div class="lb">Fraud Player</div><div class="val">0</div><div class="sub">本周无标记</div></div>
+</div>
+<div class="panel warn">
+  <div class="pi">⚠️</div>
+  <div class="pb"><strong>上周（W32，8/10–8/16）几乎无任何付费投放（Spend仅$5.37），REG_adj/FDC_adj均为0，本周WoW对比因基数极小仅供参考，不代表真实环比趋势。</strong>
+  本周（W33）花费回升至$262.48，共7支素材有花费，REG_adj 6人，但仅1笔FDC_adj（VM2_CN03，8/22）。FDCR_adj 16.7%偏低，转化漏斗在REG→FDC环节存在明显断层。</div>
+</div>
+<div class="panel ok">
+  <div class="pi">✅</div>
+  <div class="pb"><strong>GGR_adj RM 332.92、TDA_adj RM 12,644.08，均主要由零花费归因老代码驱动（详见五节），与本周付费投放规模脱钩。</strong>
+  这反映平台存量玩家本周活跃度尚可，但不能归功于本周广告投放，需单独追踪老玩家续存与新客获取两条线。</div>
+</div>
+
+
+<!-- ══ 二 · 每日花费与转化趋势 ══ -->
+<h2>二 · 每日花费与转化趋势</h2>
+<p class="sn">支出侧（Spend/FDA_adj/GGR_adj）与转化侧（REG_adj/FDC_adj）双图表</p>
+
+<div class="chart-row">
+  <div class="chart-box">
+    <h4>花费 · FDA_adj · GGR_adj</h4>
+    <div class="chart-legend-row">
+      <span><span class="lb-box" style="background:#6554C0"></span>Ads Spend（柱，$）</span>
+      <span><span class="lb-box" style="background:#FF8B00"></span>FDA_adj（柱，RM）</span>
+      <span><span class="lb-box" style="border-radius:50%;background:#00875A;width:8px;height:8px"></span>GGR_adj（折线，RM）</span>
+    </div>
+    <div class="chart-wrap-sm"><canvas id="spendChart"></canvas></div>
+  </div>
+  <div class="chart-box">
+    <h4>REG_adj · FDC_adj（人数）</h4>
+    <div class="chart-legend-row">
+      <span><span class="lb-box" style="background:#FF8B00"></span>REG_adj</span>
+      <span><span class="lb-box" style="background:#00875A"></span>FDC_adj</span>
+    </div>
+    <div class="chart-wrap-sm"><canvas id="convChart"></canvas></div>
+  </div>
+</div>
+<table>
+  <thead><tr><th>日期</th><th>花费($)</th><th>IMP</th><th>LC</th><th>CTR</th><th>REG_adj</th><th>FDC_adj</th><th>FDCR_adj</th><th>FDA_adj(RM)</th><th>GGR_adj(RM)</th></tr></thead>
+  <tbody>
+  <tr><td>8/17 周一</td><td>$0.79</td><td>97</td><td>0</td><td>0.000%</td><td>0</td><td>0</td><td>—</td><td>—</td><td style='color:#00875A'>RM 1,648.96</td></tr>
+<tr><td>8/18 周二</td><td>—</td><td>—</td><td>—</td><td>—</td><td>0</td><td>0</td><td>—</td><td>—</td><td style='color:#00875A'>RM 471.61</td></tr>
+<tr><td>8/19 周三</td><td>—</td><td>—</td><td>—</td><td>—</td><td>0</td><td>0</td><td>—</td><td>—</td><td style='color:#DE350B'>RM -879.62</td></tr>
+<tr><td>8/20 周四</td><td>$36.26</td><td>360</td><td>15</td><td>4.167%</td><td>1</td><td>0</td><td>0.0%</td><td>—</td><td style='color:#00875A'>RM 21.49</td></tr>
+<tr><td>8/21 周五</td><td>$105.35</td><td>801</td><td>23</td><td>2.871%</td><td>3</td><td>0</td><td>0.0%</td><td>—</td><td style='color:#DE350B'>RM -759.84</td></tr>
+<tr><td>8/22 周六</td><td>$50.93</td><td>615</td><td>16</td><td>2.602%</td><td>1</td><td>1</td><td>100.0%</td><td>RM 50.00</td><td style='color:#00875A'>RM 448.66</td></tr>
+<tr><td>8/23 周日</td><td>$69.15</td><td>1,097</td><td>32</td><td>2.917%</td><td>1</td><td>0</td><td>0.0%</td><td>—</td><td style='color:#DE350B'>RM -618.34</td></tr>
+
+  <tr class="tr">
+    <td><strong>合计</strong></td><td><strong>$262.48</strong></td><td><strong>2,970</strong></td><td><strong>86</strong></td>
+    <td><strong>2.896%</strong></td><td><strong>6</strong></td><td><strong>1</strong></td>
+    <td><strong>16.7%</strong></td><td><strong>RM 50.00</strong></td>
+    <td style="color:#00875A"><strong>RM 332.92</strong></td>
+  </tr>
+  </tbody>
+</table>
+<p class="sn">注：零投放日花费/IMP/LC/CTR填「—」；REG_adj/FDC_adj/GGR_adj为归因结果，正常显示不受花费侧影响。</p>
+
+
+<div class="section-summary">
+  <h4>📊 Section 2 · 本周趋势总结</h4>
+  <div class="ss-grid">
+    <div class="ss-item"><div class="s-label">FDC_adj产出日</div><div class="s-value" style="color:#00875A">8/22（1人，VM2_CN03）</div></div>
+    <div class="ss-item"><div class="s-label">GGR_adj最高日</div><div class="s-value" style="color:#00875A">8/17（RM 1,648.96）</div></div>
+    <div class="ss-item"><div class="s-label">GGR_adj最低日</div><div class="s-value" style="color:#DE350B">8/19（RM −879.62）</div></div>
+    <div class="ss-item"><div class="s-label">花费最高日</div><div class="s-value" style="color:#0052CC">8/21（$105.35）</div></div>
+    <div class="ss-item"><div class="s-label">FDC_adj 0人日数</div><div class="s-value" style="color:#DE350B">6天</div></div>
+    <div class="ss-item"><div class="s-label">零投放日</div><div class="s-value">2天（8/18·8/19）</div></div>
+  </div>
+  <p style="font-size:12px;color:#5E6C84;margin:8px 0 0">花费主要集中在8/20–8/23（合计$261.69，占本周花费99.7%），此前8/17（$0.79）几乎无投放。GGR_adj全周大幅波动（8/17 +RM1,649 vs 8/19 −RM880），与当日广告花费基本无关联，仍是老代码归因驱动。全周仅8/22产出1笔FDC_adj，REG→FDC转化效率极低。</p>
+</div>
+
+
+<!-- ══ 三 · KPI 周度总结 ══ -->
+<h2>三 · KPI 周度总结</h2>
+
+<p class="sn">INZ9 暂无正式 KPI Playbook，以下为周度过程指标追踪与同环比分析</p>
+<h3>每日过程指标（本周）</h3>
+<table>
+<thead><tr><th>日期</th><th>REG_adj</th><th>FDC_adj</th><th>FDA_adj</th><th>GGR_adj</th><th>备注</th></tr></thead>
+<tbody>
+<tr><td>8/17 周一</td><td>0</td><td><span class="lz lr">0</span></td><td>—</td><td style='color:#00875A'>RM 1,648.96</td><td></td></tr>
+<tr><td>8/18 周二</td><td>0</td><td><span class="lz lr">0</span></td><td>—</td><td style='color:#00875A'>RM 471.61</td><td>零投放日</td></tr>
+<tr><td>8/19 周三</td><td>0</td><td><span class="lz lr">0</span></td><td>—</td><td style='color:#DE350B'>RM -879.62</td><td>零投放日</td></tr>
+<tr><td>8/20 周四</td><td>1</td><td><span class="lz lr">0</span></td><td>—</td><td style='color:#00875A'>RM 21.49</td><td>REG_adj 1但未转FDC</td></tr>
+<tr><td>8/21 周五</td><td>3</td><td><span class="lz lr">0</span></td><td>—</td><td style='color:#DE350B'>RM -759.84</td><td>REG_adj 3但未转FDC</td></tr>
+<tr><td>8/22 周六</td><td>1</td><td><span class="lz lg">1</span></td><td>RM 50.00</td><td style='color:#00875A'>RM 448.66</td><td>全周唯一FDC_adj（VM2_CN03）；无Fraud标记</td></tr>
+<tr><td>8/23 周日</td><td>1</td><td><span class="lz lr">0</span></td><td>—</td><td style='color:#DE350B'>RM -618.34</td><td>REG_adj 1但未转FDC</td></tr>
+
+<tr class="tr"><td><strong>合计</strong></td><td><strong>6</strong></td><td><strong>1</strong></td><td><strong>RM 50.00</strong></td><td style="color:#00875A"><strong>RM 332.92</strong></td><td></td></tr>
+</tbody>
+</table>
+<div class="panel err">
+  <div class="pi">🚨</div>
+  <div class="pb"><strong>核心警示：本周付费广告转化几近停止——REG_adj 6人分散在4天，仅1笔转为FDC_adj（8/22，VM2_CN03），FDCR_adj仅16.7%。</strong>
+  VM2_CN02本周花费最高（$133.55）、REG_adj 3人，但全部未转化为FDC；LCK1_CN02、BNF1_CN04等素材同样REG有产出但零FDC。转化漏斗在REG→FDC环节全面断裂，需紧急排查落地页承接、归因配置或受众质量问题。</div>
+</div>
+
+
+<h3>月度 GGR_adj 进度（8月 UTD）</h3>
+<div class="ggr-progress-box">
+  <h3>月度 GGR_adj 进度（8月 UTD）</h3>
+  <div class="sub-note">8月 UTD GGR_adj（8/1–8/23，23天）· INZ9 暂无月度 GGR 目标</div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width:100%"></div></div>
+  <div style="font-size:12px;color:#6B778C;margin-bottom:10px">
+    8月 UTD GGR_adj：<strong style="color:#00875A">RM 10,647.03</strong>（8/1–8/23 累计）· INZ9 暂无月度 GGR 目标
+  </div>
+  <div class="ggr-cards">
+    <div class="ggr-card"><div class="gc-label">8月 UTD GGR_adj</div><div class="gc-val" style="color:#00875A">RM 10,647.03</div></div>
+    <div class="ggr-card"><div class="gc-label">8月 UTD FDC_adj</div><div class="gc-val" style="color:#FF8B00">3人</div></div>
+    <div class="ggr-card"><div class="gc-label">8月 UTD FDA_adj</div><div class="gc-val" style="color:#FF8B00">RM 280.00</div></div>
+    <div class="ggr-card"><div class="gc-label">8月 UTD 花费</div><div class="gc-val">$362.16</div></div>
+  </div>
+</div>
+<div class="panel warn">
+  <div class="pi">⚠️</div>
+  <div class="pb"><strong>8月 UTD GGR_adj RM 10,647.03数字亮眼，但几乎全部来自老代码归因续存，8月新开 FDC_adj 仅3人、FDA_adj RM 280.00——新客贡献接近于零。</strong>
+  若老玩家续存高峰过去而新客补充不足，GGR 将在未来数周内大幅回落。恢复并稳定广告投放是补充新客流量的紧迫任务。</div>
+</div>
+
+
+<!-- ══ 四 · 全周漏斗汇总 ══ -->
+<h2>四 · 全周漏斗汇总</h2>
+
+<p class="sn">INZ9 漏斗从 REG 开始（无 Lead/Chat 层）</p>
+<div style="display:flex;align-items:center;gap:4px;margin:12px 0;flex-wrap:wrap">
+  <div style="flex:1;min-width:75px;text-align:center;background:#EAE6FF;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#403294;font-weight:700">Ads Spend</div>
+    <div style="font-size:20px;font-weight:800;color:#6554C0">$262</div>
+    <div style="font-size:10px;color:#6B778C">上周基数极小，仅供参考</div>
+  </div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:75px;text-align:center;background:#EAE6FF;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#403294;font-weight:700">Link Click</div>
+    <div style="font-size:20px;font-weight:800;color:#6554C0">86</div>
+    <div style="font-size:10px;color:#6B778C">CTR 2.896%</div>
+  </div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:75px;text-align:center;background:#FFFAE6;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#974F0C;font-weight:700">REG_adj</div>
+    <div style="font-size:20px;font-weight:800;color:#FF8B00">6</div>
+    <div style="font-size:10px;color:#6B778C">上周：1</div>
+  </div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:75px;text-align:center;background:#FFEBE6;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#BF2600;font-weight:700">FDC_adj</div>
+    <div style="font-size:20px;font-weight:800;color:#DE350B">1</div>
+    <div style="font-size:10px;color:#6B778C">FDCR_adj 16.7%</div>
+  </div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:75px;text-align:center;background:#FFEBE6;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#BF2600;font-weight:700">FDA_adj</div>
+    <div style="font-size:20px;font-weight:800;color:#DE350B">RM 50</div>
+    <div style="font-size:10px;color:#6B778C">AFDA_adj RM 50.00</div>
+  </div>
+  <div style="font-size:16px;color:#B3BAC5;flex-shrink:0">›</div>
+  <div style="flex:1;min-width:75px;text-align:center;background:#E3FCEF;padding:9px;border-radius:5px">
+    <div style="font-size:10px;color:#006644;font-weight:700">GGR_adj</div>
+    <div style="font-size:20px;font-weight:800;color:#00875A">RM 333</div>
+    <div style="font-size:10px;color:#6B778C">TDA_adj RM 12,644</div>
+  </div>
+</div>
+<div class="panel warn">
+  <div class="pi">⚠️</div>
+  <div class="pb"><strong>漏斗从 REG_adj 6 到 FDC_adj 1，FDCR_adj 仅 16.7%，REG→FDC 环节严重劣化。</strong>
+  VM2_CN02带来3笔REG均未转化为FDC，是漏斗最大断点。GGR_adj与TDA_adj的强劲表现与付费漏斗完全脱钩——GGR增长无法反哺新客获取，需单独追踪老玩家续存动态。</div>
+</div>
+
+
+<!-- ══ 五 · 周度广告素材表现 ══ -->
+<h2>五 · 周度广告素材表现</h2>
+<p class="sn">排列顺序：① 有花费有FDC → ② 有花费无FDC（花费降序）→ ③ 新素材（Ad Live Day≤3天）→ 零花费归因来源见文末汇总</p>
+
+<div class="ads-card best">
+  <div class="ads-head">
+    <div class="an">MYR_INZ9_TRSA_IM_VM2_CN03</div>
+    <span class="lz lp">IM 图片</span>
+    <span class="lz lg">本周唯一 FDC_adj 来源</span>
+    <span class="lz lb2">Active 4天（Ad Live Day累计8天，PAUSED）</span><span class="lz lg">FDC_adj 1</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img"><img src="https://www.facebook.com/ads/image/?d=AQJVL_KJGgJEIq2xJ8n1k5x5-pwy63-iNlv3ZypOr2ZoSsH9KAloqkOKmpTwytks9NHyxtQMnvWG7iYzb7qECbl8v4EZD7Onf3WcF3Pexv9Wcp2KZbHuU5mTN8VDUMDoU_mNUTxSLDkwtoQjstSn3w6J" onerror="this.style.background='#F4F5F7'" alt="IM_VM2_CN03"><div class="il">VIP Migration Card + Benefit</div></div>
+      <div>
+        <div class="kpi-section"><div class="ks-label">流量层</div><div class="kpi-row">
+          <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$53.22</div></div>
+          <div class="kpi-item"><div class="kl">IMP</div><div class="kv">643</div></div>
+          <div class="kpi-item"><div class="kl">Link Click</div><div class="kv">13</div></div>
+          <div class="kpi-item"><div class="kl">CTR</div><div class="kv">2.02%</div></div>
+          <div class="kpi-item"><div class="kl">CPM</div><div class="kv">$82.77</div></div>
+        </div></div>
+        <div class="kpi-section"><div class="ks-label">转化漏斗（归因）</div><div class="kpi-row">
+          <div class="kpi-item"><div class="kl">REG_adj</div><div class="kv o">1</div></div>
+          <div class="kpi-item"><div class="kl">FDC_adj</div><div class="kv g">1</div></div>
+          <div class="kpi-item"><div class="kl">FDCR_adj</div><div class="kv g">100.0%</div></div>
+        </div></div>
+        <div class="kpi-section"><div class="ks-label">ROI 层</div><div class="kpi-row">
+          <div class="kpi-item"><div class="kl">FDA_adj</div><div class="kv o">RM 50.00</div></div>
+          <div class="kpi-item"><div class="kl">AFDA_adj</div><div class="kv o">RM 50.00</div></div>
+          <div class="kpi-item"><div class="kl">GGR_adj</div><div class="kv g">RM 49.92</div></div>
+          <div class="kpi-item"><div class="kl">CPA_adj</div><div class="kv o">$53.22</div></div>
+          <div class="kpi-item"><div class="kl">Fraud Player</div><div class="kv">0</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist"><h5>全历史花费趋势（Spend / CTR / FDC_adj）</h5><div class="hist-wrap"><canvas id="hist_IM_VM2_CN03"></canvas></div></div>
+  <div class="ads-note">本周仅8/22有花费产出FDC_adj（$3.13花费，REG_adj 1，FDC_adj 1，FDA_adj RM 50.00），另有部分花费分布在8/20–8/21但未转化。原始REG=0而REG_adj=1，说明该笔转化经归因模型从其他来源重新分配至本素材。历史上该素材8/24–8/28持续有花费但零FDC，8/22是本报告期内唯一产出。无Fraud标记。</div>
+</div>
+
+<div class="ads-card warn">
+  <div class="ads-head">
+    <div class="an">MYR_INZ9_TRSA_IM_VM2_CN02</div>
+    <span class="lz lp">IM 图片</span><span class="lz ly">有花费无FDC</span>
+    <span class="lz lb2">Active 4天（Ad Live Day累计7天，PAUSED）</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img"><img src="https://www.facebook.com/ads/image/?d=AQLskNSyldoODeVyRshL8SY6uVVl7BDN3MAhOOgBNYt78HNSXee1b2zny-HP6fvzoE0ryO-zjW8GjoSzffS9xa9I8stCJf40NYABkGSyNrCKzZi-wnXWVDLpw4X6OpyShkoSy1jUjFMT7ojBX47S-USN" onerror="this.style.background='#F4F5F7'" alt="IM_VM2_CN02"><div class="il">VIP Migration Card</div></div>
+      <div>
+        <div class="kpi-section"><div class="ks-label">流量层 + 转化漏斗</div><div class="kpi-row">
+          <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$133.55</div></div>
+          <div class="kpi-item"><div class="kl">IMP</div><div class="kv">1,700</div></div>
+          <div class="kpi-item"><div class="kl">Link Click</div><div class="kv">55</div></div>
+          <div class="kpi-item"><div class="kl">CTR</div><div class="kv">3.235%</div></div>
+          <div class="kpi-item"><div class="kl">CPM</div><div class="kv">$78.56</div></div>
+          <div class="kpi-item"><div class="kl">REG_adj</div><div class="kv o">3</div></div>
+          <div class="kpi-item"><div class="kl">FDC_adj</div><div class="kv r">0</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist"><h5>全历史花费趋势（Spend / CTR / FDC_adj）</h5><div class="hist-wrap"><canvas id="hist_IM_VM2_CN02"></canvas></div></div>
+  <div class="ads-note">本周花费最高（$133.55），REG_adj 3人（全组最高）但零FDC，转化漏斗在此环节断裂最明显。VIP Migration Card角度素材，8/24后历史上有产出（2笔FDC_adj，不在本报告期内），建议排查落地页承接或归因分配是否延迟。</div>
+</div>
+
+<div class="ads-card warn">
+  <div class="ads-head">
+    <div class="an">MYR_INZ9_TRSA_IM_BNF1_CN04</div>
+    <span class="lz lp">IM 图片</span><span class="lz ly">有花费无FDC</span>
+    <span class="lz lb2">Active 4天（Ad Live Day累计9天，PAUSED）</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img"><img src="https://www.facebook.com/ads/image/?d=AQKyb0TbmIZ5fs7dNJ-VCemaxYva6P-aDyZR11x77FPE6Yr38bVvHj_wEGRxcs5S9aw0YUqzvMKxRmvTlBGFkJ4Qa1tpwmxNLu_ZfpaOfViNH0dnQhiwQLEJmht4znixlE19jiZJJWmx3z3n7Oexy1JA" onerror="this.style.background='#F4F5F7'" alt="IM_BNF1_CN04"><div class="il">VIP benefit - amended 3 (no bottom bar)</div></div>
+      <div>
+        <div class="kpi-section"><div class="ks-label">流量层 + 转化漏斗</div><div class="kpi-row">
+          <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$14.37</div></div>
+          <div class="kpi-item"><div class="kl">IMP</div><div class="kv">181</div></div>
+          <div class="kpi-item"><div class="kl">Link Click</div><div class="kv">9</div></div>
+          <div class="kpi-item"><div class="kl">CTR</div><div class="kv">4.972%</div></div>
+          <div class="kpi-item"><div class="kl">CPM</div><div class="kv">$79.39</div></div>
+          <div class="kpi-item"><div class="kl">REG_adj</div><div class="kv o">1</div></div>
+          <div class="kpi-item"><div class="kl">FDC_adj</div><div class="kv r">0</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist"><h5>全历史花费趋势（Spend / CTR / FDC_adj）</h5><div class="hist-wrap"><canvas id="hist_IM_BNF1_CN04"></canvas></div></div>
+  <div class="ads-note">VIP benefit角度，花费$14.37（4天投放），REG_adj 1人，零FDC。8/28后历史上曾产出2笔FDC_adj（不在本报告期内），值得关注该素材后续表现。</div>
+</div>
+
+<div class="ads-card warn">
+  <div class="ads-head">
+    <div class="an">MYR_INZ9_TRSA_IM_WD1_CN01</div>
+    <span class="lz lp">IM 图片</span><span class="lz ly">有花费无FDC</span>
+    <span class="lz lb2">Active 1天（Ad Live Day累计6天，PAUSED）</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img"><img src="https://www.facebook.com/ads/image/?d=AQLbi7vBPio_zRV35iq2bymySdRzkk28Bx8Eb2O9C-1PVXr6B0HTQftBtlSe0ttiLUVZg3xzM_etReWZLtDdVAE0pgilzKWN7Ux_jRoCymSCwaGu2Xj6vWD2jysLD15tIyxHavXOva5zrpoEWbem6d8o" onerror="this.style.background='#F4F5F7'" alt="IM_WD1_CN01"><div class="il">150赢8888</div></div>
+      <div>
+        <div class="kpi-section"><div class="ks-label">流量层 + 转化漏斗</div><div class="kpi-row">
+          <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$0.46</div></div>
+          <div class="kpi-item"><div class="kl">IMP</div><div class="kv">37</div></div>
+          <div class="kpi-item"><div class="kl">Link Click</div><div class="kv">0</div></div>
+          <div class="kpi-item"><div class="kl">CTR</div><div class="kv">0.000%</div></div>
+          <div class="kpi-item"><div class="kl">CPM</div><div class="kv">$12.43</div></div>
+          <div class="kpi-item"><div class="kl">REG_adj</div><div class="kv o">0</div></div>
+          <div class="kpi-item"><div class="kl">FDC_adj</div><div class="kv r">0</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist"><h5>全历史花费趋势（Spend / CTR / FDC_adj）</h5><div class="hist-wrap"><canvas id="hist_IM_WD1_CN01"></canvas></div></div>
+  <div class="ads-note">提款角度素材，本周仅8/23投放1天，花费仅$0.46，样本极小。</div>
+</div>
+
+<div class="ads-card warn">
+  <div class="ads-head">
+    <div class="an">MYR_INZ9_TRSA_IM_VM1_CN06</div>
+    <span class="lz lp">IM 图片</span><span class="lz ly">有花费无FDC</span>
+    <span class="lz lb2">Active 1天（Ad Live Day累计6天，PAUSED）</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img"><img src="https://www.facebook.com/ads/image/?d=AQLFkDTLKZlomeFLVdZGssWrJmlnOobujnBizBSeXg3LQdvP8BdnoxceExOo0SgkaQEMznfb8e-Z9lcVDvSCPhDG6YoB7bFOJjVUId1s-5gx8OkGbF2ns-wsWYfS-P_GQwcqpIxKGjGJrb3u9ZsLZ7SC" onerror="this.style.background='#F4F5F7'" alt="IM_VM1_CN06"><div class="il">VIP福利RM488 [new fb page + traffic source test] - amended  2</div></div>
+      <div>
+        <div class="kpi-section"><div class="ks-label">流量层 + 转化漏斗</div><div class="kpi-row">
+          <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$0.17</div></div>
+          <div class="kpi-item"><div class="kl">IMP</div><div class="kv">38</div></div>
+          <div class="kpi-item"><div class="kl">Link Click</div><div class="kv">0</div></div>
+          <div class="kpi-item"><div class="kl">CTR</div><div class="kv">0.000%</div></div>
+          <div class="kpi-item"><div class="kl">CPM</div><div class="kv">$4.47</div></div>
+          <div class="kpi-item"><div class="kl">REG_adj</div><div class="kv o">0</div></div>
+          <div class="kpi-item"><div class="kl">FDC_adj</div><div class="kv r">0</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist"><h5>全历史花费趋势（Spend / CTR / FDC_adj）</h5><div class="hist-wrap"><canvas id="hist_IM_VM1_CN06"></canvas></div></div>
+  <div class="ads-note">VIP福利RM488角度，本周仅8/17投放1天，花费$0.17，样本极小。</div>
+</div>
+
+<div class="ads-card warn">
+  <div class="ads-head">
+    <div class="an">MYR_INZ9_TRSA_IM_BNF1_CN03</div>
+    <span class="lz lp">IM 图片</span><span class="lz ly">有花费无FDC</span>
+    <span class="lz lb2">Active 1天（Ad Live Day累计7天，PAUSED）</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img"><img src="https://www.facebook.com/ads/image/?d=AQKSh3rG1JwBr5EjnlOaoketrvKwwD8PAiatOXrwj52zlJ7C-6J-CZd09aRETu0kOVqxAH6aGdVT-9CFJEmcFcsgLbUvaf2AIZ38SfyuiLWTxGwoxjU6AfQv9DcrwdwOOwjzG697iA1tjNWzqJYHVgM7" onerror="this.style.background='#F4F5F7'" alt="IM_BNF1_CN03"><div class="il">VIP benefit [new fb page + traffic source]  - amended 2</div></div>
+      <div>
+        <div class="kpi-section"><div class="ks-label">流量层 + 转化漏斗</div><div class="kpi-row">
+          <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$0.16</div></div>
+          <div class="kpi-item"><div class="kl">IMP</div><div class="kv">22</div></div>
+          <div class="kpi-item"><div class="kl">Link Click</div><div class="kv">0</div></div>
+          <div class="kpi-item"><div class="kl">CTR</div><div class="kv">0.000%</div></div>
+          <div class="kpi-item"><div class="kl">CPM</div><div class="kv">$7.27</div></div>
+          <div class="kpi-item"><div class="kl">REG_adj</div><div class="kv o">0</div></div>
+          <div class="kpi-item"><div class="kl">FDC_adj</div><div class="kv r">0</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist"><h5>全历史花费趋势（Spend / CTR / FDC_adj）</h5><div class="hist-wrap"><canvas id="hist_IM_BNF1_CN03"></canvas></div></div>
+  <div class="ads-note">VIP benefit角度（amended版本），本周仅8/17投放1天，花费$0.16，样本极小，Ad Live Day已7天但持续低花费测试中。</div>
+</div>
+
+<div class="ads-card newads">
+  <div class="ads-head">
+    <div class="an">MYR_INZ9_TRSA_IM_LCK1_CN02</div>
+    <span class="lz lp">IM 图片</span><span class="lz lp">新素材·Ad Live Day≤3天</span>
+    <span class="lz lb2">Active 2天（Ad Live Day累计2天）</span>
+  </div>
+  <div class="ads-body">
+    <div class="ads-meta">
+      <div class="ads-img"><img src="https://www.facebook.com/ads/image/?d=AQL1MlplVNGhYwSHkv1h0793r0O-1ttcbLwI4-XhY_3G_mLVaCP10tV6j4CIrskrz546ek9G-AY4WYLjpnVET6Jc3EHcipoJSyLi4bIq34r2-SRb-xwVmdC9qHDlxgXi_7HSQMjqnPJ9weYaP0kXKbUY" onerror="this.style.background='#F4F5F7'" alt="IM_LCK1_CN02"><div class="il">左右对比手气福袋</div></div>
+      <div>
+        <div class="kpi-section"><div class="ks-label">流量层 + 转化漏斗</div><div class="kpi-row">
+          <div class="kpi-item"><div class="kl">Ads Spend</div><div class="kv">$60.55</div></div>
+          <div class="kpi-item"><div class="kl">IMP</div><div class="kv">349</div></div>
+          <div class="kpi-item"><div class="kl">CTR</div><div class="kv">2.58%</div></div>
+          <div class="kpi-item"><div class="kl">REG_adj</div><div class="kv">1</div></div>
+          <div class="kpi-item"><div class="kl">FDC_adj</div><div class="kv">0</div></div>
+        </div></div>
+      </div>
+    </div>
+  </div>
+  <div class="ads-hist"><h5>全历史花费趋势（Spend / CTR / FDC_adj）</h5><div class="hist-wrap"><canvas id="hist_IM_LCK1_CN02"></canvas></div></div>
+  <div class="ads-note">新上线（Ad Live Day 2天），本周花费$60.55（8/21–8/22两天），REG_adj 1人，零FDC，样本过小不宜过早判断，建议继续观察。</div>
+</div>
+
+
+<div class="panel info">
+  <div class="pi">📊</div>
+  <div class="pb"><strong>零花费归因来源汇总（本周 GGR_adj 主要来源）：</strong>本周 GGR_adj RM 332.92 的主要贡献来自以下零花费老代码的历史归因续存——TRSA_VD_AMB3_CN01_AB_DEP（RM -1,420）、MYMKTFB0071（RM 580）、MYMKTFB0122（RM 422）、MYMKTFB0095（RM 242）、MYMKTFB0022（RM 148）、MYMKTEM0001（RM -115） 等（共15个零花费代码有GGR_adj/TDA_adj记录）。
+  这些老代码代表历史首存玩家在本周的活跃续存，反映平台存留玩家质量尚可；但均非本周付费广告带来的新客，不可纳入本周投放效率评估。建议单独追踪老玩家续存趋势，与新客GGR分开监控。</div>
+</div>
+
+
+<!-- ══ 六 · 素材核心指标对比排名 ══ -->
+<h2>六 · 素材核心指标对比排名</h2>
+
+<p class="sn">按花费排序 · 本周共7支素材有花费 · 仅VM2_CN03产出FDC_adj</p>
+<div class="rank-table">
+  <div class="rank-header">
+    <div>#</div><div>素材</div><div>Ad Type</div><div>Ads Description</div>
+    <div>花费($)</div><div>FDC_adj</div><div>FDA_adj(RM)</div><div>FDCR_adj</div>
+    <div>CPA_adj($)</div><div>评级</div>
+  </div>
+  
+<div class="rank-row">
+  <div class="rank-data">
+    <div>1</div>
+    <div class="code" style="font-size:10px">IM_VM2_CN02</div>
+    <div><span class="lz lp" style="font-size:9px">IM</span></div>
+    <div style="font-size:11px">VIP Migration Card</div>
+    <div>$133.55</div><div style="color:#DE350B">0</div>
+    <div>—</div><div>0.0%</div>
+    <div>—</div>
+    <div><span class="grade-badge gb-warn">花费最高·零FDC</span></div>
+  </div>
+  <div style="display:flex;gap:0">
+    <div style="flex-shrink:0;border-right:1px solid #DFE1E6"><img src="https://www.facebook.com/ads/image/?d=AQLskNSyldoODeVyRshL8SY6uVVl7BDN3MAhOOgBNYt78HNSXee1b2zny-HP6fvzoE0ryO-zjW8GjoSzffS9xa9I8stCJf40NYABkGSyNrCKzZi-wnXWVDLpw4X6OpyShkoSy1jUjFMT7ojBX47S-USN" onerror="this.style.background='#F4F5F7'" alt="" style="width:68px;height:68px;object-fit:cover;display:block"></div>
+    <div class="rank-desc"><span class="grade-badge gb-warn">花费最高·零FDC</span>&nbsp;花费$133.55全组最高，REG_adj 3人但零FDC，是漏斗最大断点，需紧急排查。</div>
+  </div>
+</div>
+
+<div class="rank-row">
+  <div class="rank-data">
+    <div>2</div>
+    <div class="code" style="font-size:10px">IM_LCK1_CN02</div>
+    <div><span class="lz lp" style="font-size:9px">IM</span></div>
+    <div style="font-size:11px">左右对比手气福袋</div>
+    <div>$60.55</div><div style="color:#DE350B">0</div>
+    <div>—</div><div>0.0%</div>
+    <div>—</div>
+    <div><span class="grade-badge gb-new">新素材</span></div>
+  </div>
+  <div style="display:flex;gap:0">
+    <div style="flex-shrink:0;border-right:1px solid #DFE1E6"><img src="https://www.facebook.com/ads/image/?d=AQL1MlplVNGhYwSHkv1h0793r0O-1ttcbLwI4-XhY_3G_mLVaCP10tV6j4CIrskrz546ek9G-AY4WYLjpnVET6Jc3EHcipoJSyLi4bIq34r2-SRb-xwVmdC9qHDlxgXi_7HSQMjqnPJ9weYaP0kXKbUY" onerror="this.style.background='#F4F5F7'" alt="" style="width:68px;height:68px;object-fit:cover;display:block"></div>
+    <div class="rank-desc"><span class="grade-badge gb-new">新素材</span>&nbsp;花费$60.55（2天投放），Ad Live Day仅2天，REG_adj 1人，新素材样本过小暂不评判。</div>
+  </div>
+</div>
+
+<div class="rank-row">
+  <div class="rank-data">
+    <div>3</div>
+    <div class="code" style="font-size:10px">IM_VM2_CN03</div>
+    <div><span class="lz lp" style="font-size:9px">IM</span></div>
+    <div style="font-size:11px">VIP Migration Card + Benefit</div>
+    <div>$53.22</div><div style="color:#00875A">1</div>
+    <div>RM 50.00</div><div>100.0%</div>
+    <div>$53.22</div>
+    <div><span class="grade-badge gb-best">唯一FDC来源</span></div>
+  </div>
+  <div style="display:flex;gap:0">
+    <div style="flex-shrink:0;border-right:1px solid #DFE1E6"><img src="https://www.facebook.com/ads/image/?d=AQJVL_KJGgJEIq2xJ8n1k5x5-pwy63-iNlv3ZypOr2ZoSsH9KAloqkOKmpTwytks9NHyxtQMnvWG7iYzb7qECbl8v4EZD7Onf3WcF3Pexv9Wcp2KZbHuU5mTN8VDUMDoU_mNUTxSLDkwtoQjstSn3w6J" onerror="this.style.background='#F4F5F7'" alt="" style="width:68px;height:68px;object-fit:cover;display:block"></div>
+    <div class="rank-desc"><span class="grade-badge gb-best">唯一FDC来源</span>&nbsp;花费仅$53.22，归因产出全周唯一FDC_adj（1人，FDA_adj RM 50.00），CPA_adj $53.22。</div>
+  </div>
+</div>
+
+<div class="rank-row">
+  <div class="rank-data">
+    <div>4</div>
+    <div class="code" style="font-size:10px">IM_BNF1_CN04</div>
+    <div><span class="lz lp" style="font-size:9px">IM</span></div>
+    <div style="font-size:11px">VIP benefit - amended 3 (no bottom bar)</div>
+    <div>$14.37</div><div style="color:#DE350B">0</div>
+    <div>—</div><div>0.0%</div>
+    <div>—</div>
+    <div><span class="grade-badge gb-low">零转化</span></div>
+  </div>
+  <div style="display:flex;gap:0">
+    <div style="flex-shrink:0;border-right:1px solid #DFE1E6"><img src="https://www.facebook.com/ads/image/?d=AQKyb0TbmIZ5fs7dNJ-VCemaxYva6P-aDyZR11x77FPE6Yr38bVvHj_wEGRxcs5S9aw0YUqzvMKxRmvTlBGFkJ4Qa1tpwmxNLu_ZfpaOfViNH0dnQhiwQLEJmht4znixlE19jiZJJWmx3z3n7Oexy1JA" onerror="this.style.background='#F4F5F7'" alt="" style="width:68px;height:68px;object-fit:cover;display:block"></div>
+    <div class="rank-desc"><span class="grade-badge gb-low">零转化</span>&nbsp;花费$14.37，REG_adj 1人，零FDC，历史上8/28后有产出（不在本期）。</div>
+  </div>
+</div>
+
+<div class="rank-row">
+  <div class="rank-data">
+    <div>5</div>
+    <div class="code" style="font-size:10px">IM_WD1_CN01</div>
+    <div><span class="lz lp" style="font-size:9px">IM</span></div>
+    <div style="font-size:11px">150赢8888</div>
+    <div>$0.46</div><div style="color:#DE350B">0</div>
+    <div>—</div><div>—</div>
+    <div>—</div>
+    <div><span class="grade-badge gb-zero">样本过小</span></div>
+  </div>
+  <div style="display:flex;gap:0">
+    <div style="flex-shrink:0;border-right:1px solid #DFE1E6"><img src="https://www.facebook.com/ads/image/?d=AQLbi7vBPio_zRV35iq2bymySdRzkk28Bx8Eb2O9C-1PVXr6B0HTQftBtlSe0ttiLUVZg3xzM_etReWZLtDdVAE0pgilzKWN7Ux_jRoCymSCwaGu2Xj6vWD2jysLD15tIyxHavXOva5zrpoEWbem6d8o" onerror="this.style.background='#F4F5F7'" alt="" style="width:68px;height:68px;object-fit:cover;display:block"></div>
+    <div class="rank-desc"><span class="grade-badge gb-zero">样本过小</span>&nbsp;花费仅$0.46，样本过小不具参考价值。</div>
+  </div>
+</div>
+
+<div class="rank-row">
+  <div class="rank-data">
+    <div>6</div>
+    <div class="code" style="font-size:10px">IM_VM1_CN06</div>
+    <div><span class="lz lp" style="font-size:9px">IM</span></div>
+    <div style="font-size:11px">VIP福利RM488 [new fb page + traffic source test] - amended  2</div>
+    <div>$0.17</div><div style="color:#DE350B">0</div>
+    <div>—</div><div>—</div>
+    <div>—</div>
+    <div><span class="grade-badge gb-zero">样本过小</span></div>
+  </div>
+  <div style="display:flex;gap:0">
+    <div style="flex-shrink:0;border-right:1px solid #DFE1E6"><img src="https://www.facebook.com/ads/image/?d=AQLFkDTLKZlomeFLVdZGssWrJmlnOobujnBizBSeXg3LQdvP8BdnoxceExOo0SgkaQEMznfb8e-Z9lcVDvSCPhDG6YoB7bFOJjVUId1s-5gx8OkGbF2ns-wsWYfS-P_GQwcqpIxKGjGJrb3u9ZsLZ7SC" onerror="this.style.background='#F4F5F7'" alt="" style="width:68px;height:68px;object-fit:cover;display:block"></div>
+    <div class="rank-desc"><span class="grade-badge gb-zero">样本过小</span>&nbsp;花费仅$0.17，样本过小不具参考价值。</div>
+  </div>
+</div>
+
+<div class="rank-row">
+  <div class="rank-data">
+    <div>7</div>
+    <div class="code" style="font-size:10px">IM_BNF1_CN03</div>
+    <div><span class="lz lp" style="font-size:9px">IM</span></div>
+    <div style="font-size:11px">VIP benefit [new fb page + traffic source]  - amended 2</div>
+    <div>$0.16</div><div style="color:#DE350B">0</div>
+    <div>—</div><div>—</div>
+    <div>—</div>
+    <div><span class="grade-badge gb-zero">样本过小</span></div>
+  </div>
+  <div style="display:flex;gap:0">
+    <div style="flex-shrink:0;border-right:1px solid #DFE1E6"><img src="https://www.facebook.com/ads/image/?d=AQKSh3rG1JwBr5EjnlOaoketrvKwwD8PAiatOXrwj52zlJ7C-6J-CZd09aRETu0kOVqxAH6aGdVT-9CFJEmcFcsgLbUvaf2AIZ38SfyuiLWTxGwoxjU6AfQv9DcrwdwOOwjzG697iA1tjNWzqJYHVgM7" onerror="this.style.background='#F4F5F7'" alt="" style="width:68px;height:68px;object-fit:cover;display:block"></div>
+    <div class="rank-desc"><span class="grade-badge gb-zero">样本过小</span>&nbsp;花费仅$0.16，样本过小不具参考价值。</div>
+  </div>
+</div>
+
+</div>
+<div class="panel err">
+  <div class="pi">🚨</div>
+  <div class="pb"><strong>本周素材排名几乎失去意义：7支素材中，花费最高的VM2_CN02（$133.55）零FDC，唯一产出FDC的VM2_CN03花费仅$53.22（全组第三），付费广告转化效率极低。</strong>
+  广告投放组合需全面重置，建议下周持续测试新素材，同时重点排查VM2_CN02、LCK1_CN02、BNF1_CN04的REG→FDC断层原因。</div>
+</div>
+
+
+<!-- ══ 七 · 玩家留存层数据 ══ -->
+<h2>七 · 玩家留存层数据</h2>
+<p class="sn">报告生成日 8/31（周一）· 成熟条件：D7 diff≥7d，D15 diff≥15d（以「报告生成日 − 首存日」计算）· 转化侧使用 _adj 归因字段 · traffic_channel='MKT'</p>
+
+<h3>子节 A：本周（8/17–8/23）首存玩家留存</h3>
+<p class="sn">本周 FDC_adj=1（仅8/22，VM2_CN03）· 8/22 diff=9d ✓ D7已成熟（真实零续存）· D15未成熟（成熟日9/6）</p>
+<table>
+<thead><tr><th>首存日</th><th>主要素材</th><th>FDC_adj</th><th>FDA_adj</th><th>D7R_adj</th><th>D7CR_adj</th><th>D7A_adj</th><th>D15R_adj</th><th>D15A_adj（当前）</th><th>D15成熟状态</th></tr></thead>
+<tbody>
+<tr>
+<td>8/22 ✓（diff=9d）</td><td class="code">VM2_CN03</td><td>1</td><td>RM 50.00</td>
+<td>0 ✓<br><span class="s7-note">✓已成熟·真实零续存</span></td>
+<td>0.0%</td>
+<td>RM 0.00<br><span class="s7-note">已成熟·真实零续存</span></td>
+<td>—<br><span class="s7-note">未成熟</span></td>
+<td>—<br><span class="s7-note">当前·无累积</span></td>
+<td>○ D15未成熟（成熟日 9/6）</td>
+</tr>
+
+<tr class="tr">
+  <td colspan="2"><strong>本周合计</strong></td>
+  <td><strong>1</strong></td><td><strong>RM 50.00</strong></td>
+  <td><strong>0 ✓</strong></td><td><strong>0.0%</strong></td><td><strong>RM 0.00</strong></td>
+  <td><strong>—</strong></td><td><strong>—</strong></td>
+  <td><strong>D15成熟日 9/6</strong></td>
+</tr>
+</tbody>
+</table>
+<div class="panel warn">
+  <div class="pi">⚠️</div>
+  <div class="pb"><strong>本周唯一FDC_adj（8/22，VM2_CN03）D7已成熟：D7R_adj为null（真实零续存），即该玩家首存后7天内未再存款。</strong>
+  样本量仅1人，不足以判断系统性留存问题，但与上周（W32）完全无FDC对照，本品牌近两周新客获取与留存数据均严重不足，需持续观察。D15将于9/6成熟。</div>
+</div>
+
+
+<h3>子节 B：上周（8/10–8/16）首存玩家留存（L2 正式评估）</h3>
+<div class="panel err">
+  <div class="pi">🚨</div>
+  <div class="pb"><strong>上周（W32，8/10–8/16）全周FDC_adj=0，无任何首存玩家产生，无法进行留存分析或L2正式评估。</strong>
+  该周付费投放几乎完全缺失（花费仅$5.37），是本品牌近期表现最差的一周之一。正式L2留存评估依赖有实际FDC产生的周次，建议待未来某周产生规模化FDC后再进行评估；本周（W33）虽仅1笔FDC，D7已判定为真实零续存，趋势值得警惕。</div>
+</div>
+
+
+<!-- ══ 八 · 核心结论与建议 ══ -->
+<h2>八 · 核心结论与建议</h2>
+
+<div class="panel err">
+  <div class="pi">🚨</div>
+  <div class="pb"><strong>付费广告转化几近停滞：本周REG_adj 6人、FDC_adj仅1人，FDCR_adj 16.7%。上周（W32）花费仅$5.37，FDC_adj为0。连续两周新客获取严重不足。</strong>
+  若下周不能稳定预算并改善REG→FDC转化，INZ9新客获取将持续停滞。建议将周预算稳定在至少$250以上，并确保有3-4支素材并行测试。</div>
+</div>
+
+<div class="panel err">
+  <div class="pi">🚨</div>
+  <div class="pb"><strong>本周唯一FDC（VM2_CN03，8/22）D7已成熟且为真实零续存，样本虽小但与上周（W32）零FDC对照，留存与获客双重承压，需立即排查。</strong>
+  建议：① 核查落地页/App注册-首存链路是否顺畅；② 审查归因模型分配是否准确（多支素材REG_adj与原始REG差异较大）；③ 排查首存后是否有自动化触达机制。</div>
+</div>
+
+<div class="panel warn">
+  <div class="pi">⚠️</div>
+  <div class="pb"><strong>GGR_adj RM 332.92、TDA_adj RM 12,644的表现来自老玩家续存，不可持续依赖：TRSA_VD_AMB3_CN01_AB_DEP（RM -1,420）等老代码贡献了本周大部分GGR，说明平台存量玩家活跃度尚可，但新客补充严重不足。</strong>
+  建议设立「老玩家GGR」与「新客GGR」双轨追踪，避免整体GGR掩盖新客获取失败的现实。</div>
+</div>
+
+<div class="panel info">
+  <div class="pi">📊</div>
+  <div class="pb"><strong>下周行动优先级：</strong>① 稳定并适度提升周预算（当前$262.48，建议≥$300）→ ② 排查VM2_CN02（花费最高但零FDC）的REG→FDC断层原因（落地页/归因配置/受众漂移）→ ③ 持续观察新素材LCK1_CN02（Ad Live Day仅2天）表现 → ④ 关注VM2_CN03、BNF1_CN04在报告期后（8/24起）已有的FDC产出迹象，可能预示下周报告有改善空间 → ⑤ 9/6关注8/22 FDC的D15成熟情况。</div>
+</div>
+
+
+<hr>
+<p style="font-size:11px;color:#6B778C;text-align:center">
+  【INZ9 分析】INZ9 周报 · 2026第33周 · 生成：2026年8月31日（周一）<br>
+  汇报周期：2026年8月17日（周一）—— 8月23日（周日）· Ads Spend 以 $ 呈现，存款/GGR 以 RM 呈现
+</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const LABELS = ["8/17 周一", "8/18 周二", "8/19 周三", "8/20 周四", "8/21 周五", "8/22 周六", "8/23 周日"];
+const SPEND = [0.79, 0.0, 0.0, 36.26, 105.35, 50.93, 69.15];
+const FDA = [0.0, 0.0, 0.0, 0.0, 0.0, 50.0, 0.0];
+const GGR = [1648.96, 471.61, -879.62, 21.49, -759.84, 448.66, -618.34];
+const REG = [0.0, 0.0, 0.0, 1.0, 3.0, 1.0, 1.0];
+const FDC = [0.0, 0.0, 0.0, 0.0, 0.0, 1.0, 0.0];
+
+new Chart(document.getElementById('spendChart'),{
+  data:{labels:LABELS,datasets:[
+    {type:'bar',label:'Ads Spend($)',data:SPEND,backgroundColor:'#6554C0',borderRadius:3,yAxisID:'y',barPercentage:0.5},
+    {type:'bar',label:'FDA_adj(RM)',data:FDA,backgroundColor:'#FF8B00',borderRadius:3,yAxisID:'y',barPercentage:0.5},
+    {type:'line',label:'GGR_adj(RM)',data:GGR,borderColor:'#00875A',backgroundColor:'transparent',tension:0.3,pointRadius:4,pointBackgroundColor:'#00875A',yAxisID:'y2'},
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    plugins:{legend:{display:false}},
+    scales:{y:{type:'linear',position:'left',ticks:{color:'#5E6C84',font:{size:10}}},
+            y2:{type:'linear',position:'right',grid:{drawOnChartArea:false},ticks:{color:'#00875A',font:{size:10}}}}}
+});
+
+new Chart(document.getElementById('convChart'),{
+  data:{labels:LABELS,datasets:[
+    {type:'bar',label:'REG_adj',data:REG,backgroundColor:'#FF8B00',borderRadius:3,barPercentage:0.5},
+    {type:'bar',label:'FDC_adj',data:FDC,backgroundColor:'#00875A',borderRadius:3,barPercentage:0.5},
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    plugins:{legend:{display:false}},scales:{x:{ticks:{color:'#5E6C84',font:{size:10}}},y:{beginAtZero:true,ticks:{stepSize:1,color:'#5E6C84',font:{size:10}}}}}
+});
+
+function makeHistChart(id,labels,spend,ctr,fdc){
+  const c=document.getElementById(id); if(!c) return;
+  new Chart(c,{data:{labels,datasets:[
+    {type:'bar',label:'Spend($)',data:spend,backgroundColor:'rgba(101,84,192,0.25)',borderColor:'rgba(101,84,192,0.5)',borderWidth:1,yAxisID:'yS',barPercentage:0.8},
+    {type:'line',label:'CTR(%)',data:ctr,borderColor:'#FF8B00',backgroundColor:'transparent',tension:0.3,pointRadius:2,yAxisID:'yC',borderWidth:1.5,spanGaps:true},
+    {type:'bar',label:'FDC_adj',data:fdc,backgroundColor:'rgba(0,135,90,0.8)',borderRadius:2,yAxisID:'yF',barPercentage:0.4},
+  ]},
+  options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    plugins:{legend:{position:'top',labels:{font:{size:9},boxWidth:8,padding:8,color:'#5E6C84'}}},
+    scales:{
+      yS:{type:'linear',position:'left',ticks:{color:'#6554C0',font:{size:8}},title:{display:true,text:'Spend($)',color:'#6554C0',font:{size:8}}},
+      yC:{type:'linear',position:'right',grid:{drawOnChartArea:false},ticks:{color:'#FF8B00',font:{size:8}},title:{display:true,text:'CTR(%)',color:'#FF8B00',font:{size:8}}},
+      yF:{type:'linear',position:'right',display:false},
+      x:{ticks:{color:'#5E6C84',font:{size:8},maxTicksLimit:14}}}}});
+}
+
+const l_IM_BNF1_CN03=["8/10", "8/12", "8/13", "8/14", "8/15", "8/16", "8/17"];
+const s_IM_BNF1_CN03=[0.07, 0.17, 0.16, 0.01, 0.02, 0.13, 0.16];
+const c_IM_BNF1_CN03=[0.0, 2.47, 3.85, 0.0, 0.0, 8.33, 0.0];
+const f_IM_BNF1_CN03=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+makeHistChart('hist_IM_BNF1_CN03', l_IM_BNF1_CN03, s_IM_BNF1_CN03, c_IM_BNF1_CN03, f_IM_BNF1_CN03);
+
+const l_IM_BNF1_CN04=["8/20", "8/21", "8/22", "8/23", "8/24", "8/25", "8/26", "8/28", "8/29"];
+const s_IM_BNF1_CN04=[6.98, 0.69, 1.46, 5.24, 12.26, 2.7, 0.03, 37.02, 22.02];
+const c_IM_BNF1_CN04=[6.38, 0.0, 0.0, 5.17, 2.56, 4.42, 0.0, 3.29, 3.62];
+const f_IM_BNF1_CN04=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 2.0, 0.0];
+makeHistChart('hist_IM_BNF1_CN04', l_IM_BNF1_CN04, s_IM_BNF1_CN04, c_IM_BNF1_CN04, f_IM_BNF1_CN04);
+
+const l_IM_LCK1_CN02=["8/21", "8/22"];
+const s_IM_LCK1_CN02=[43.75, 16.8];
+const c_IM_LCK1_CN02=[3.14, 1.59];
+const f_IM_LCK1_CN02=[0.0, 0.0];
+makeHistChart('hist_IM_LCK1_CN02', l_IM_LCK1_CN02, s_IM_LCK1_CN02, c_IM_LCK1_CN02, f_IM_LCK1_CN02);
+
+const l_IM_VM1_CN06=["8/12", "8/13", "8/14", "8/15", "8/16", "8/17"];
+const s_IM_VM1_CN06=[0.8, 0.83, 0.2, 0.37, 0.56, 0.17];
+const c_IM_VM1_CN06=[6.78, 7.32, 15.38, 13.33, 0.0, 0.0];
+const f_IM_VM1_CN06=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+makeHistChart('hist_IM_VM1_CN06', l_IM_VM1_CN06, s_IM_VM1_CN06, c_IM_VM1_CN06, f_IM_VM1_CN06);
+
+const l_IM_VM2_CN02=["8/20", "8/21", "8/22", "8/23", "8/24", "8/25", "8/26"];
+const s_IM_VM2_CN02=[27.47, 22.54, 29.54, 54.0, 56.16, 51.76, 12.05];
+const c_IM_VM2_CN02=[3.12, 2.65, 3.45, 3.33, 3.04, 1.52, 7.45];
+const f_IM_VM2_CN02=[0.0, 0.0, 0.0, 0.0, 2.0, 1.0, 1.0];
+makeHistChart('hist_IM_VM2_CN02', l_IM_VM2_CN02, s_IM_VM2_CN02, c_IM_VM2_CN02, f_IM_VM2_CN02);
+
+const l_IM_VM2_CN03=["8/20", "8/21", "8/22", "8/23", "8/24", "8/25", "8/26", "8/28"];
+const s_IM_VM2_CN03=[1.81, 38.37, 3.13, 9.91, 8.93, 3.13, 0.18, 16.23];
+const c_IM_VM2_CN03=[10.0, 2.96, 1.03, 0.51, 0.62, 0.0, 0.0, 2.14];
+const f_IM_VM2_CN03=[0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+makeHistChart('hist_IM_VM2_CN03', l_IM_VM2_CN03, s_IM_VM2_CN03, c_IM_VM2_CN03, f_IM_VM2_CN03);
+
+const l_IM_WD1_CN01=["8/12", "8/13", "8/14", "8/15", "8/16", "8/17"];
+const s_IM_WD1_CN01=[0.51, 0.31, 0.29, 0.4, 0.54, 0.46];
+const c_IM_WD1_CN01=[1.41, 4.88, 16.67, 6.25, 10.81, 0.0];
+const f_IM_WD1_CN01=[0.0, 0.0, 0.0, 0.0, 0.0, 0.0];
+makeHistChart('hist_IM_WD1_CN01', l_IM_WD1_CN01, s_IM_WD1_CN01, c_IM_WD1_CN01, f_IM_WD1_CN01);
+
+</script>
+
+</body>
+</html>
