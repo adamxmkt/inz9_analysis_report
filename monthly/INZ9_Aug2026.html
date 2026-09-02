@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>INZ9 月报 · 2026年8月</title>
+<style>  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;font-size:14px;line-height:1.6;color:#172B4D;max-width:1000px;margin:0 auto;padding:32px 40px;background:#fff}
+  .page-title{font-size:26px;font-weight:700;color:#172B4D;margin:0 0 6px;padding-bottom:12px;border-bottom:3px solid #0052CC}
+  .page-meta{font-size:12px;color:#6B778C;margin-bottom:28px}
+  h2{font-size:17px;font-weight:700;color:#172B4D;margin:28px 0 10px;padding-bottom:6px;border-bottom:1px solid #DFE1E6}
+  h3{font-size:13px;font-weight:700;color:#5E6C84;margin:16px 0 8px;text-transform:uppercase;letter-spacing:.04em}
+  .panel{border-radius:4px;padding:11px 15px;margin:10px 0;display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.55}
+  .panel-icon{font-size:15px;flex-shrink:0;margin-top:1px}.panel-body{flex:1}
+  .panel.info{background:#DEEBFF;border-left:4px solid #0052CC}
+  .panel.warning{background:#FFFAE6;border-left:4px solid #FF8B00}
+  .panel.success{background:#E3FCEF;border-left:4px solid #00875A}
+  .panel.error{background:#FFEBE6;border-left:4px solid #DE350B}
+  .panel strong{font-weight:600}
+  .metric-row{display:flex;gap:10px;margin:12px 0;flex-wrap:wrap}
+  .metric-card{flex:1;min-width:100px;background:#F4F5F7;border-radius:6px;padding:12px 14px}
+  .metric-card .label{font-size:11px;color:#6B778C;font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+  .metric-card .value{font-size:22px;font-weight:700;color:#172B4D;line-height:1.2}
+  .metric-card .sub{font-size:11px;color:#6B778C;margin-top:3px}
+  .wow{display:inline-flex;align-items:center;gap:2px;font-size:10px;font-weight:700;padding:1px 6px;border-radius:3px;margin-top:5px;letter-spacing:.02em;white-space:nowrap}
+  .wow-up{background:#E3FCEF;color:#006644}.wow-down{background:#FFEBE6;color:#BF2600}.wow-good-down{background:#E3FCEF;color:#006644}.wow-neutral{background:#F4F5F7;color:#5E6C84}
+  .value.green{color:#00875A!important}.value.red{color:#DE350B!important}.value.orange{color:#FF8B00!important}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin:10px 0}
+  th{background:#F4F5F7;color:#5E6C84;font-weight:700;font-size:11px;text-align:left;padding:7px 10px;border:1px solid #DFE1E6;white-space:nowrap}
+  td{padding:7px 10px;border:1px solid #DFE1E6;vertical-align:middle;color:#172B4D}
+  tr:nth-child(even) td{background:#FAFBFC}
+  .lozenge{display:inline-block;padding:2px 8px;border-radius:3px;font-size:11px;font-weight:600;line-height:1.6;white-space:nowrap}
+  .lg{background:#E3FCEF;color:#006644}.ly{background:#FFFAE6;color:#974F0C}.lr{background:#FFEBE6;color:#BF2600}.lb{background:#DEEBFF;color:#0747A6}.lgr{background:#F4F5F7;color:#5E6C84}.lp{background:#EAE6FF;color:#403294}
+  .code{font-family:"SFMono-Regular",Consolas,monospace;font-size:11px;color:#5E6C84}
+  hr{border:none;border-top:1px solid #DFE1E6;margin:24px 0}
+  p{margin:8px 0}ul{margin:8px 0 8px 20px}ul li{margin-bottom:4px}
+  .section-note{font-size:12px;color:#6B778C;margin-bottom:10px}
+  .funnel2-row{display:flex;align-items:center;gap:0;margin:16px 0}
+  .funnel2-card{flex:1;background:#F4F5F7;border-radius:8px;padding:14px 12px;text-align:center;min-width:0}
+  .funnel2-card.blue{background:#DEEBFF}.funnel2-card.green{background:#E3FCEF}
+  .funnel2-card.yellow{background:#FFFAE6}.funnel2-card.red{background:#FFEBE6}
+  .funnel2-card .fc-label{font-size:12px;font-weight:700;color:#5E6C84;margin-bottom:4px}
+  .funnel2-card.blue .fc-label{color:#0747A6}.funnel2-card.green .fc-label{color:#006644}
+  .funnel2-card.yellow .fc-label{color:#974F0C}.funnel2-card.red .fc-label{color:#BF2600}
+  .funnel2-card .fc-val{font-size:28px;font-weight:700;color:#172B4D;line-height:1.1;margin:4px 0}
+  .funnel2-card.blue .fc-val{color:#0052CC}.funnel2-card.green .fc-val{color:#00875A}
+  .funnel2-card.yellow .fc-val{color:#FF8B00}.funnel2-card.red .fc-val{color:#DE350B}
+  .funnel2-card .fc-rate{font-size:11px;color:#6B778C;margin:4px 0 6px}
+  .fc-mom{display:inline-flex;align-items:center;gap:2px;font-size:10px;font-weight:700;padding:2px 7px;border-radius:3px;white-space:nowrap}
+  .fc-mom.down{background:#FFEBE6;color:#BF2600}.fc-mom.up{background:#E3FCEF;color:#006644}.fc-mom.neutral{background:#F4F5F7;color:#5E6C84}
+  .funnel2-arrow{font-size:22px;color:#B3BAC5;flex:0 0 28px;text-align:center;line-height:1}
+  .ads-grid{display:grid;grid-template-columns:1fr;gap:14px;margin:14px 0}
+  .ads-card{border:1px solid #DFE1E6;border-radius:8px;overflow:hidden}
+  .ads-card.has-fdc{border-top:3px solid #00875A}.ads-card.no-conv{border-top:3px solid #FF8B00}.ads-card.zero-spend{border-top:3px solid #B3BAC5}
+  .ads-card-header{padding:10px 14px;background:#F4F5F7;border-bottom:1px solid #DFE1E6;display:flex;align-items:center;justify-content:space-between;gap:8px}
+  .ads-card-header .ads-name{font-family:"SFMono-Regular",Consolas,monospace;font-size:11px;color:#172B4D;font-weight:700;flex:1}
+  .ads-card-body{padding:12px 14px;display:flex;gap:16px}
+  .ads-preview{flex-shrink:0;width:110px}
+  .ads-preview img{width:110px;height:110px;object-fit:cover;border-radius:5px;border:1px solid #DFE1E6;display:block}
+  .ads-preview .preview-label{font-size:10px;color:#6B778C;text-align:center;margin-top:4px;line-height:1.4}
+  .ads-kpi-section{flex:1;min-width:0}
+  .kpi-group-label{font-size:10px;color:#6B778C;font-weight:700;letter-spacing:.04em;margin-bottom:4px;margin-top:8px;text-transform:uppercase}
+  .ads-kpi-row{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-bottom:8px}
+  .ads-kpi{background:#FAFBFC;border:1px solid #EBECF0;border-radius:5px;padding:7px 9px}
+  .ads-kpi .kpi-label{font-size:10px;color:#6B778C;font-weight:500;letter-spacing:.03em;margin-bottom:3px}
+  .ads-kpi .kpi-value{font-size:15px;font-weight:700;color:#172B4D;line-height:1.2}
+  .ads-kpi .kpi-value.green{color:#00875A}.ads-kpi .kpi-value.red{color:#DE350B}.ads-kpi .kpi-value.orange{color:#FF8B00}
+  .ads-tag-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+  .chart-wrap{position:relative;height:260px;margin:12px 0 6px}
+  .chart-legend{display:flex;gap:18px;font-size:12px;color:#5E6C84;margin-bottom:6px;flex-wrap:wrap}
+  .chart-legend span{display:flex;align-items:center;gap:6px}
+  .legend-box{width:12px;height:12px;border-radius:2px;display:inline-block}
+  .kpi-tracker-table td.pass{background:#E3FCEF;color:#006644;font-weight:700;text-align:center}
+  .kpi-tracker-table td.fail{background:#FFEBE6;color:#BF2600;font-weight:700;text-align:center}
+  .kpi-tracker-table td.na{background:#F4F5F7;color:#6B778C;text-align:center}
+  .kpi-tracker-table td.partial{background:#FFFAE6;color:#974F0C;font-weight:700;text-align:center}
+  .ggr-progress-bar-wrap{background:#EBECF0;border-radius:6px;height:22px;margin:10px 0;overflow:hidden}
+  .ggr-progress-bar{height:100%;border-radius:6px;display:flex;align-items:center;padding-left:10px;font-size:11px;font-weight:700;color:#fff;white-space:nowrap}
+  .rank-img{width:44px;height:44px;object-fit:cover;border-radius:4px;border:1px solid #DFE1E6;display:block}
+  .rank-no-img{width:44px;height:44px;border-radius:4px;border:1px solid #DFE1E6;background:#F4F5F7;display:flex;align-items:center;justify-content:center;font-size:9px;color:#6B778C;text-align:center}
+  td.img-cell{width:54px;padding:4px 6px}
+  .ret-mature{background:#E3FCEF;color:#006644;font-size:10px;font-weight:600;padding:1px 5px;border-radius:2px}
+  .ret-partial{background:#FFFAE6;color:#974F0C;font-size:10px;font-weight:600;padding:1px 5px;border-radius:2px}
+  .ret-immature{background:#F4F5F7;color:#5E6C84;font-size:10px;padding:1px 5px;border-radius:2px}
+</style>
+</head>
+<body>
+<div class="page-title">INZ9 月报 · 2026年8月</div>
+<div class="page-meta">
+  汇报周期：2026年8月1日（周六）—— 8月31日（周一）&nbsp;·&nbsp; 报告生成：2026年8月31日（周一）&nbsp;·&nbsp; 品牌：INZ9&nbsp;·&nbsp; 市场：马来西亚&nbsp;·&nbsp; 货币：Ads Spend/CPA 以 $ 呈现，存款/GGR 以 RM 呈现
+</div>
+
+<div class="panel info">
+  <div class="panel-icon">📊</div>
+  <div class="panel-body"><strong>说明：</strong>全部转化/留存指标使用 _adj 归因修正字段（REG_adj、FDC_adj、FDA_adj、D7R_adj等），素材过滤统一以 traffic_channel='MKT' 为准。INZ9 暂无正式 brand_KPI 目标文件，四节仅呈现过程指标与GGR说明。</div>
+</div>
+
+<!-- §1 月度核心数据概览 -->
+<h2>一 · 月度核心数据概览</h2>
+<p class="section-note">全月31天，共5支素材有付费转化产出，约30个零花费老代码贡献剩余GGR</p>
+
+<div class="metric-row">
+  <div class="metric-card"><div class="label">Ads Spend</div><div class="value">$621.79</div></div>
+  <div class="metric-card"><div class="label">IMP</div><div class="value">8,372</div></div>
+  <div class="metric-card"><div class="label">Link Click</div><div class="value">242</div><div class="sub">CTR 2.891%</div></div>
+  <div class="metric-card"><div class="label">REG_adj</div><div class="value orange">22</div></div>
+  <div class="metric-card"><div class="label">FDC_adj</div><div class="value green">10</div></div>
+</div>
+<div class="metric-row">
+  <div class="metric-card"><div class="label">FDA_adj</div><div class="value green">RM 600.00</div></div>
+  <div class="metric-card"><div class="label">FDCR_adj</div><div class="value green">45.5%</div><div class="sub">健康基准&gt;35%</div></div>
+  <div class="metric-card"><div class="label">AFDA_adj</div><div class="value green">RM 60.00</div></div>
+  <div class="metric-card"><div class="label">CPA_adj</div><div class="value orange">$62.18</div></div>
+  <div class="metric-card"><div class="label">FD Ads Rate</div><div class="value green">1.036</div><div class="sub">&lt;1 = 成本低于首存收入</div></div>
+</div>
+<div class="metric-row">
+  <div class="metric-card"><div class="label">GGR_adj（月合计）</div><div class="value green">RM 12,884.78</div></div>
+  <div class="metric-card"><div class="label">TDA_adj（月合计）</div><div class="value green">RM 79,674.08</div></div>
+  <div class="metric-card"><div class="label">Fraud Player</div><div class="value red">6</div><div class="sub">需人工复核</div></div>
+</div>
+<div class="panel success">
+  <div class="panel-icon">✅</div>
+  <div class="panel-body"><strong>8月付费漏斗表面指标健康：FDCR_adj 45.5%（&gt;35%基准），FD Ads Rate 1.036（&lt;1，广告成本低于首存收入）。但月度花费仅$621.79、FDC_adj仅10人，规模极小，且GGR_adj/TDA_adj的RM 12,884.78/RM 79,674.08绝大部分（GGR_adj约RM12,265.91，占95.2%）来自零花费老代码归因续存，与本月付费投放规模基本脱钩。</strong></div>
+</div>
+<div class="panel error">
+  <div class="panel-icon">🚨</div>
+  <div class="panel-body"><strong>核心警示：本月已可评估成熟度的10笔FDC_adj中，凡进入D7成熟窗口的（W1两笔、W4两笔，共4笔），D7R_adj全部为真实零续存（0%）。若这一模式持续，说明INZ9本月新客几乎没有产生任何重复存款，是比"规模小"更严重的结构性问题。</strong></div>
+</div>
+
+
+<!-- §2 全月漏斗表现 -->
+<h2>二 · 全月漏斗表现</h2>
+
+<p class="section-note">INZ9 漏斗从 REG 开始（无 Lead/Chat 层）</p>
+<div class="funnel2-row">
+  <div class="funnel2-card blue"><div class="fc-label">Ads Spend</div><div class="fc-val">$622</div></div>
+  <div class="funnel2-arrow">›</div>
+  <div class="funnel2-card blue"><div class="fc-label">Link Click</div><div class="fc-val">242</div><div class="fc-rate">CTR 2.89%</div></div>
+  <div class="funnel2-arrow">›</div>
+  <div class="funnel2-card yellow"><div class="fc-label">REG_adj</div><div class="fc-val">22</div></div>
+  <div class="funnel2-arrow">›</div>
+  <div class="funnel2-card green"><div class="fc-label">FDC_adj</div><div class="fc-val">10</div><div class="fc-rate">FDCR_adj 45.5%</div></div>
+  <div class="funnel2-arrow">›</div>
+  <div class="funnel2-card green"><div class="fc-label">FDA_adj</div><div class="fc-val">RM 600</div><div class="fc-rate">AFDA_adj RM60.00</div></div>
+  <div class="funnel2-arrow">›</div>
+  <div class="funnel2-card green"><div class="fc-label">GGR_adj</div><div class="fc-val">RM 12,885</div><div class="fc-rate">TDA_adj RM79,674</div></div>
+</div>
+<div class="panel info">
+  <div class="panel-icon">📊</div>
+  <div class="panel-body"><strong>REG_adj到FDC_adj的转化效率（FDCR_adj 45.5%）本身健康，说明漏斗承接没有明显问题；核心瓶颈在于规模——月度仅22笔REG_adj、10笔FDC_adj，需要通过增加预算和素材测试扩大流量基数。</strong></div>
+</div>
+
+
+<!-- §3 每周花费与转化趋势 -->
+<h2>三 · 每周花费与转化趋势</h2>
+
+<p class="section-note">按自然周拆分（W1: 8/1–8/7 … W5: 8/29–8/31，部分周）· traffic_channel='MKT'</p>
+<table>
+<thead><tr><th>周次</th><th>花费($)</th><th>IMP</th><th>CTR</th><th>REG_adj</th><th>FDC_adj</th><th>FDCR_adj</th><th>FDA_adj</th><th>GGR_adj</th></tr></thead>
+<tbody>
+<tr><td><strong>W1</strong> (8/1–8/7)</td><td>$85.45</td><td>1,819</td><td>2.75%</td><td>4</td><td>2</td><td>50.0%</td><td>RM 230.00</td><td style='color:#00875A'>RM 4,828.94</td></tr>
+<tr><td><strong>W2</strong> (8/8–8/14)</td><td>$12.21</td><td>454</td><td>3.96%</td><td>2</td><td>0</td><td>0.0%</td><td>RM 0.00</td><td style='color:#00875A'>RM 4,878.18</td></tr>
+<tr><td><strong>W3</strong> (8/15–8/21)</td><td>$144.42</td><td>1,415</td><td>3.46%</td><td>4</td><td>0</td><td>0.0%</td><td>RM 0.00</td><td style='color:#00875A'>RM 1,109.59</td></tr>
+<tr><td><strong>W4</strong> (8/22–8/28)</td><td>$357.69</td><td>4,546</td><td>2.64%</td><td>10</td><td>8</td><td>80.0%</td><td>RM 370.00</td><td style='color:#00875A'>RM 3,718.76</td></tr>
+<tr><td><strong>W5</strong> (8/29–8/31)</td><td>$22.02</td><td>138</td><td>3.62%</td><td>2</td><td>0</td><td>0.0%</td><td>RM 0.00</td><td style='color:#DE350B'>-RM 1,650.69</td></tr>
+
+<tr style="background:#F4F5F7"><td><strong>月合计</strong></td><td><strong>$621.79</strong></td><td><strong>8,372</strong></td>
+<td><strong>2.89%</strong></td><td><strong>22</strong></td>
+<td><strong>10</strong></td><td><strong>45.5%</strong></td><td><strong>RM 600.00</strong></td>
+<td style="color:#00875A"><strong>RM 12,884.78</strong></td></tr>
+</tbody>
+</table>
+<div class="chart-wrap"><canvas id="weekChart"></canvas></div>
+<div class="panel warning">
+  <div class="panel-icon">⚠️</div>
+  <div class="panel-body"><strong>付费投放极不稳定：W2花费仅$12.21（几乎停投），W1/W4是仅有的两个产生FDC_adj的周次。GGR_adj波动巨大（W1 RM4,828.94 → W5 -RM1,650.69），但这与付费投放规模无直接关联，主要反映零花费老代码的自然波动。</strong></div>
+</div>
+
+
+<!-- §4 KPI 月度总结 -->
+<h2>四 · KPI 月度总结</h2>
+
+<p class="section-note">INZ9 暂无正式 L2/L3 KPI Playbook（brand_KPI 文件不适用于 INZ9）。本节仅呈现过程指标，详细D7留存质量评估见七节。</p>
+<div class="panel info">
+  <div class="panel-icon">📊</div>
+  <div class="panel-body"><strong>8月付费漏斗表面指标健康（FDCR_adj 45.5%，FD Ads Rate 1.036），但规模极小（月度花费仅$621.79，FDC_adj仅10人），且5支支付转化素材中有4例Fraud Player标记待复核。</strong></div>
+</div>
+
+
+<h3>月度 GGR_adj 说明</h3>
+<div class="panel info" style="margin-top:6px">
+  <div class="panel-icon">📊</div>
+  <div class="panel-body"><strong>INZ9 暂无月度 GGR_adj 目标（无 brand_KPI 文件）。8月 GGR_adj 为 RM 12,884.78，其中约RM12,265.91（95.2%）来自零花费老代码归因续存，仅约RM618.87来自本月有花费/有转化的素材。建议单独追踪"老玩家GGR"与"新客GGR"两条线，避免整体GGR掩盖新客获取规模过小的现实。</strong></div>
+</div>
+
+
+<!-- §5 月度广告素材表现 -->
+<h2>五 · 月度广告素材表现</h2>
+<p class="section-note">精选5支有付费转化产出的素材展示详细卡片，其余素材见文末汇总表</p>
+<div class="ads-grid">
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">MYR_INZ9_TRSA_IM_VM2_CN02</div>
+    <span class="lozenge lg">FDC_adj 4</span>
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQLskNSyldoODeVyRshL8SY6uVVl7BDN3MAhOOgBNYt78HNSXee1b2zny-HP6fvzoE0ryO-zjW8GjoSzffS9xa9I8stCJf40NYABkGSyNrCKzZi-wnXWVDLpw4X6OpyShkoSy1jUjFMT7ojBX47S-USN" onerror="this.style.background='#F4F5F7'" alt=""><div class="preview-label">VIP Migration Card</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧（月度累计）</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$253.52</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">2,781</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">85</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">3.06%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$91.16</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧（归因）</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">REG_adj</div><div class="kpi-value">8</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC_adj</div><div class="kpi-value green">4</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDCR_adj</div><div class="kpi-value orange">50.0%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA_adj</div><div class="kpi-value">RM220.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Fraud</div><div class="kpi-value red">2</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">AFDA_adj</div><div class="kpi-value green">RM55.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR_adj</div><div class="kpi-value green">RM 469.78</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPA_adj</div><div class="kpi-value orange">$63.38</div></div>
+      </div>
+      <div class="ads-tag-row"><span class="lozenge lg">月度FDC_adj最多</span><span class="lozenge lg">GGR_adj最高</span><span class="lozenge lr">含2例Fraud待复核</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">MYR_INZ9_TRSA_IM_BNF1_CN04</div>
+    <span class="lozenge lg">FDC_adj 2</span>
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQKyb0TbmIZ5fs7dNJ-VCemaxYva6P-aDyZR11x77FPE6Yr38bVvHj_wEGRxcs5S9aw0YUqzvMKxRmvTlBGFkJ4Qa1tpwmxNLu_ZfpaOfViNH0dnQhiwQLEJmht4znixlE19jiZJJWmx3z3n7Oexy1JA" onerror="this.style.background='#F4F5F7'" alt=""><div class="preview-label">VIP benefit - amended 3 (no bottom bar)</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧（月度累计）</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$88.40</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">862</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">33</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">3.83%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$102.55</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧（归因）</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">REG_adj</div><div class="kpi-value">5</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC_adj</div><div class="kpi-value green">2</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDCR_adj</div><div class="kpi-value orange">40.0%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA_adj</div><div class="kpi-value">RM80.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Fraud</div><div class="kpi-value red">1</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">AFDA_adj</div><div class="kpi-value green">RM40.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR_adj</div><div class="kpi-value green">RM 9.45</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPA_adj</div><div class="kpi-value orange">$44.20</div></div>
+      </div>
+      <div class="ads-tag-row"><span class="lozenge lg">FDCR_adj健康</span><span class="lozenge lr">含1例Fraud待复核</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">MYR_INZ9_TRSA_IM_VM2_CN03</div>
+    <span class="lozenge lg">FDC_adj 1</span>
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQJVL_KJGgJEIq2xJ8n1k5x5-pwy63-iNlv3ZypOr2ZoSsH9KAloqkOKmpTwytks9NHyxtQMnvWG7iYzb7qECbl8v4EZD7Onf3WcF3Pexv9Wcp2KZbHuU5mTN8VDUMDoU_mNUTxSLDkwtoQjstSn3w6J" onerror="this.style.background='#F4F5F7'" alt=""><div class="preview-label">VIP Migration Card + Benefit</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧（月度累计）</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$81.69</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">1,123</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">18</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">1.60%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$72.74</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧（归因）</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">REG_adj</div><div class="kpi-value">1</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC_adj</div><div class="kpi-value green">1</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDCR_adj</div><div class="kpi-value orange">100.0%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA_adj</div><div class="kpi-value">RM50.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Fraud</div><div class="kpi-value ">0</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">AFDA_adj</div><div class="kpi-value green">RM50.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR_adj</div><div class="kpi-value green">RM 49.92</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPA_adj</div><div class="kpi-value orange">$81.69</div></div>
+      </div>
+      <div class="ads-tag-row"><span class="lozenge lg">REG_adj经归因+1</span><span class="lozenge lg">小额高效</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">MYR_INZ9_TRSA_IM_BNF1_CN02</div>
+    <span class="lozenge lg">FDC_adj 1</span>
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQJU7rdMEnIDtMfAuTf_vsosIBXPIWCj55tNTeU9Es9oGZDwywB5NQGKuxfQvoTmzRlLc9zLwt7kKrLv0ZDYQ5srrhy90dgSIedIxGS05kE2LetmcPNCI6SwqbT4swdFXUAmpVc4JFCpCkE8tJE35eBC" onerror="this.style.background='#F4F5F7'" alt=""><div class="preview-label">VIP benefit [new fb page + traffic source]  - amended</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧（月度累计）</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$70.89</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">1,384</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">28</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">2.02%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$51.22</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧（归因）</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">REG_adj</div><div class="kpi-value">5</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC_adj</div><div class="kpi-value green">1</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDCR_adj</div><div class="kpi-value orange">20.0%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA_adj</div><div class="kpi-value">RM200.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Fraud</div><div class="kpi-value red">1</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">AFDA_adj</div><div class="kpi-value green">RM200.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR_adj</div><div class="kpi-value green">RM 199.90</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPA_adj</div><div class="kpi-value orange">$70.89</div></div>
+      </div>
+      <div class="ads-tag-row"><span class="lozenge lg">GGR_adj RM199.9</span><span class="lozenge lr">含1例Fraud待复核</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="ads-card has-fdc">
+  <div class="ads-card-header">
+    <div class="ads-name">MYR_INZ9_TRSA_IM_VM2_CN04</div>
+    <span class="lozenge lg">FDC_adj 1</span>
+  </div>
+  <div class="ads-card-body">
+    <div class="ads-preview"><img src="https://www.facebook.com/ads/image/?d=AQJjU7lu2VJe1VICJCNYdCw8Y9uTqa7TE-xBGXB4o0h8NEIh2pUcAnkAEDewtqAAisv685OD3AFkuXShPXFbAKo6kUiUX4eFxjdN0ORghl-wHoGKbSbYgrzi0pQnmiH0_Jjk6y-mYcdzUaOY-J_97qyN" onerror="this.style.background='#F4F5F7'" alt=""><div class="preview-label">VIP Migration Card + Benefit - revamp</div></div>
+    <div class="ads-kpi-section">
+      <div class="kpi-group-label">📊 支出侧（月度累计）</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">Spend</div><div class="kpi-value">$21.60</div></div>
+        <div class="ads-kpi"><div class="kpi-label">IMP</div><div class="kpi-value">210</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Clicks</div><div class="kpi-value">12</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CTR</div><div class="kpi-value">5.71%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPM</div><div class="kpi-value">$102.86</div></div>
+      </div>
+      <div class="kpi-group-label">💰 转化侧（归因）</div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">REG_adj</div><div class="kpi-value">1</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDC_adj</div><div class="kpi-value green">1</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDCR_adj</div><div class="kpi-value orange">100.0%</div></div>
+        <div class="ads-kpi"><div class="kpi-label">FDA_adj</div><div class="kpi-value">RM20.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">Fraud</div><div class="kpi-value red">1</div></div>
+      </div>
+      <div class="ads-kpi-row">
+        <div class="ads-kpi"><div class="kpi-label">AFDA_adj</div><div class="kpi-value green">RM20.00</div></div>
+        <div class="ads-kpi"><div class="kpi-label">GGR_adj</div><div class="kpi-value red">-RM 140.20</div></div>
+        <div class="ads-kpi"><div class="kpi-label">CPA_adj</div><div class="kpi-value orange">$21.60</div></div>
+      </div>
+      <div class="ads-tag-row"><span class="lozenge lg">GGR_adj为负</span><span class="lozenge lr">含1例Fraud待复核</span></div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<h3>有花费无转化素材（7支）</h3>
+<table>
+<thead><tr><th>素材</th><th>Spend</th><th>REG_adj</th></tr></thead>
+<tbody><tr><td class='code'>IM_LCK1_CN02</td><td>$60.55</td><td>1</td></tr>
+<tr><td class='code'>IM_VM1_CN05</td><td>$23.42</td><td>0</td></tr>
+<tr><td class='code'>IM_LCK1_CN03</td><td>$8.50</td><td>0</td></tr>
+<tr><td class='code'>IM_LCK1_CN04</td><td>$7.06</td><td>0</td></tr>
+<tr><td class='code'>IM_VM1_CN06</td><td>$2.93</td><td>0</td></tr>
+<tr><td class='code'>IM_WD1_CN01</td><td>$2.51</td><td>0</td></tr>
+<tr><td class='code'>IM_BNF1_CN03</td><td>$0.72</td><td>0</td></tr>
+</tbody>
+</table>
+
+<h3>零花费转化 · 已停投素材</h3>
+<table>
+<thead><tr><th>素材</th><th>FDC_adj</th><th>FDA_adj</th><th>GGR_adj</th></tr></thead>
+<tbody><tr><td class='code'>MYMKTFB0147</td><td>1</td><td>RM 30.00</td><td>RM 30.02</td></tr>
+</tbody>
+</table>
+
+<div class="panel info">
+  <div class="panel-icon">📊</div>
+  <div class="panel-body"><strong>零花费归因来源汇总：</strong>本月约30个零花费老代码（MYMKTFB系列等历史Facebook/Telegram来源）合计贡献GGR_adj约RM12,265.91、TDA_adj约RM78,774.08、REG_adj 1笔，代表历史首存玩家的自然续存活动，与本月付费投放无关，未逐条列出明细，仅作汇总说明。</div>
+</div>
+
+
+<!-- §6 月度素材综合排名 -->
+<h2>六 · 月度素材综合排名</h2>
+
+<p class="section-note">按 GGR_adj 降序排列，覆盖全部5支有付费转化产出的素材</p>
+<table>
+<thead><tr><th>#</th><th>预览</th><th>素材</th><th>Spend</th><th>FDC_adj</th><th>FDA_adj</th><th>GGR_adj</th></tr></thead>
+<tbody><tr><td>1</td><td class='img-cell'><img src="https://www.facebook.com/ads/image/?d=AQLskNSyldoODeVyRshL8SY6uVVl7BDN3MAhOOgBNYt78HNSXee1b2zny-HP6fvzoE0ryO-zjW8GjoSzffS9xa9I8stCJf40NYABkGSyNrCKzZi-wnXWVDLpw4X6OpyShkoSy1jUjFMT7ojBX47S-USN" class="rank-img" onerror="this.style.background='#F4F5F7'"></td><td class='code'>IM_VM2_CN02</td><td>$253.52</td><td>4</td><td>RM 220.00</td><td style='color:#00875A'>RM 469.78</td></tr>
+<tr><td>2</td><td class='img-cell'><img src="https://www.facebook.com/ads/image/?d=AQJU7rdMEnIDtMfAuTf_vsosIBXPIWCj55tNTeU9Es9oGZDwywB5NQGKuxfQvoTmzRlLc9zLwt7kKrLv0ZDYQ5srrhy90dgSIedIxGS05kE2LetmcPNCI6SwqbT4swdFXUAmpVc4JFCpCkE8tJE35eBC" class="rank-img" onerror="this.style.background='#F4F5F7'"></td><td class='code'>IM_BNF1_CN02</td><td>$70.89</td><td>1</td><td>RM 200.00</td><td style='color:#00875A'>RM 199.90</td></tr>
+<tr><td>3</td><td class='img-cell'><img src="https://www.facebook.com/ads/image/?d=AQJVL_KJGgJEIq2xJ8n1k5x5-pwy63-iNlv3ZypOr2ZoSsH9KAloqkOKmpTwytks9NHyxtQMnvWG7iYzb7qECbl8v4EZD7Onf3WcF3Pexv9Wcp2KZbHuU5mTN8VDUMDoU_mNUTxSLDkwtoQjstSn3w6J" class="rank-img" onerror="this.style.background='#F4F5F7'"></td><td class='code'>IM_VM2_CN03</td><td>$81.69</td><td>1</td><td>RM 50.00</td><td style='color:#00875A'>RM 49.92</td></tr>
+<tr><td>4</td><td class='img-cell'><img src="https://www.facebook.com/ads/image/?d=AQKyb0TbmIZ5fs7dNJ-VCemaxYva6P-aDyZR11x77FPE6Yr38bVvHj_wEGRxcs5S9aw0YUqzvMKxRmvTlBGFkJ4Qa1tpwmxNLu_ZfpaOfViNH0dnQhiwQLEJmht4znixlE19jiZJJWmx3z3n7Oexy1JA" class="rank-img" onerror="this.style.background='#F4F5F7'"></td><td class='code'>IM_BNF1_CN04</td><td>$88.40</td><td>2</td><td>RM 80.00</td><td style='color:#00875A'>RM 9.45</td></tr>
+<tr><td>5</td><td class='img-cell'><img src="https://www.facebook.com/ads/image/?d=AQJjU7lu2VJe1VICJCNYdCw8Y9uTqa7TE-xBGXB4o0h8NEIh2pUcAnkAEDewtqAAisv685OD3AFkuXShPXFbAKo6kUiUX4eFxjdN0ORghl-wHoGKbSbYgrzi0pQnmiH0_Jjk6y-mYcdzUaOY-J_97qyN" class="rank-img" onerror="this.style.background='#F4F5F7'"></td><td class='code'>IM_VM2_CN04</td><td>$21.60</td><td>1</td><td>RM 20.00</td><td style='color:#DE350B'>-RM 140.20</td></tr>
+</tbody>
+</table>
+<div class="panel warning">
+  <div class="panel-icon">⚠️</div>
+  <div class="panel-body"><strong>VM2_CN02是月度核心素材（FDC_adj最多、GGR_adj最高），但含2例待复核Fraud Player。VM2_CN04的GGR_adj为负（-RM140.20），同时含1例Fraud标记，建议优先复核该笔转化真实性。5支素材中共有4例Fraud Player标记，占月度总Fraud数（6例）的三分之二，需要系统性复核。</strong></div>
+</div>
+
+
+<!-- §7 玩家留存层数据（_adj归因后） -->
+<h2>七 · 玩家留存层数据（_adj归因后）</h2>
+
+<p class="section-note">报告生成日：8/31（今天）· 成熟条件：D7 diff≥7天，D15 diff≥15天，D30 diff≥30天 · 按月内每周分行呈现（不分子节A/B）· 转化侧使用 _adj 归因字段</p>
+<table>
+<thead><tr><th>周次</th><th>FDC_adj</th><th>FDA_adj</th><th>D7R_adj</th><th>D7状态</th><th>D15R_adj</th><th>D15状态</th><th>D30状态</th></tr></thead>
+<tbody>
+<tr><td><strong>W1</strong> (8/1–8/7)</td><td>2</td><td>RM 230.00</td><td>0（真实零续存）</td><td><span class="ret-mature">✓全数已成熟</span></td><td>0</td><td><span class="ret-mature">✓全数已成熟</span></td><td><span class="ret-immature">○未成熟</span></td></tr>
+<tr><td><strong>W2</strong> (8/8–8/14)</td><td>0</td><td>RM 0.00</td><td>0</td><td><span class="ret-mature">✓全数已成熟</span></td><td>0</td><td><span class="ret-mature">✓全数已成熟</span></td><td><span class="ret-mature">✓全数已成熟</span></td></tr>
+<tr><td><strong>W3</strong> (8/15–8/21)</td><td>0</td><td>RM 0.00</td><td>0</td><td><span class="ret-mature">✓全数已成熟</span></td><td>0</td><td><span class="ret-mature">✓全数已成熟</span></td><td><span class="ret-mature">✓全数已成熟</span></td></tr>
+<tr><td><strong>W4</strong> (8/22–8/28)</td><td>8</td><td>RM 370.00</td><td>0</td><td><span class="ret-partial">⚠部分成熟（08/25、08/26、08/28未成熟）</span></td><td>0</td><td><span class="ret-partial">⚠部分成熟（08/22、08/24、08/25、08/26、08/28未成熟）</span></td><td><span class="ret-immature">○未成熟</span></td></tr>
+<tr><td><strong>W5</strong> (8/29–8/31)</td><td>0</td><td>RM 0.00</td><td>0</td><td><span class="ret-mature">✓全数已成熟</span></td><td>0</td><td><span class="ret-mature">✓全数已成熟</span></td><td><span class="ret-mature">✓全数已成熟</span></td></tr>
+
+</tbody>
+</table>
+<div class="panel error">
+  <div class="panel-icon">🚨</div>
+  <div class="panel-body"><strong>8月合计：</strong>已判定成熟的批次共4笔FDC_adj（W1全部2笔、W4已成熟的2笔），D7R_adj全部为0（真实零续存），D7CR_adj=0.0%。W4另有3笔（8/25/26/28）与W5全部尚未成熟，将于9月上旬陆续成熟。样本量虽小，但100%零续存的一致性是本月最值得警惕的信号，优先级高于"规模偏小"本身。</strong></div>
+</div>
+
+
+<!-- §8 核心结论与建议 -->
+<h2>八 · 核心结论与建议</h2>
+
+<div class="panel error">
+  <div class="panel-icon">🚨</div>
+  <div class="panel-body"><strong>8月最核心的警示：已成熟的4笔FDC_adj的D7R_adj全部为0，100%零续存。虽样本量小，但一致性极高，建议将此列为9月最优先排查事项——检查首存后是否有VIP专员跟进、自动化触达（短信/推送/邮件）、或首存奖励机制是否吸引玩家继续存款。</strong></div>
+</div>
+
+<div class="panel warning">
+  <div class="panel-icon">⚠️</div>
+  <div class="panel-body"><strong>本月付费投放规模极小（花费$621.79，FDC_adj仅10人）且极不稳定（W2几乎停投）。GGR_adj/TDA_adj的RM 12,884.78/RM 79,674.08中95.2%来自零花费老代码，若不扩大新客获取规模，现有GGR增长不可持续。</strong></div>
+</div>
+
+<div class="panel warning">
+  <div class="panel-icon">⚠️</div>
+  <div class="panel-body"><strong>5支有转化素材中4例标记Fraud Player（占月度总Fraud数的三分之二），需人工复核确认真实性，若属实需修正相应GGR/FDC统计口径，避免高估月度实际转化质量。</strong></div>
+</div>
+
+<div class="panel info">
+  <div class="panel-icon">📊</div>
+  <div class="panel-body"><strong>9月行动优先级：</strong>① 立即排查首存后D7零续存的根因（VIP维系/自动化触达/首存后体验）→ ② 完成4例待复核Fraud Player的人工审核并回写数据 → ③ 稳定并提升周度预算，避免W2式的几乎停投 → ④ 维持VM2_CN02等核心素材投放，同时扩大新素材测试规模 → ⑤ 持续跟踪W4未成熟批次及9月新首存的D7/D15成熟结果，验证零续存是否为系统性问题。</div>
+</div>
+
+
+<hr>
+<p style="font-size:11px;color:#6B778C;text-align:center">
+  【INZ9 分析】INZ9 月报 · 2026年8月 · 生成：2026年8月31日（周一）<br>
+  汇报周期：2026年8月1日 —— 8月31日 · Ads Spend 以 $ 呈现，存款/GGR 以 RM 呈现
+</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+new Chart(document.getElementById('weekChart'), {
+  data: {
+    labels: ["W1 (8/1–8/7)", "W2 (8/8–8/14)", "W3 (8/15–8/21)", "W4 (8/22–8/28)", "W5 (8/29–8/31)"],
+    datasets: [
+      {type:'bar',label:'Spend($)',data:[85.45, 12.21, 144.42, 357.69, 22.02],backgroundColor:'#0052CC',borderRadius:3,yAxisID:'y'},
+      {type:'bar',label:'FDC_adj',data:[2.0, 0.0, 0.0, 8.0, 0.0],backgroundColor:'#00875A',borderRadius:3,yAxisID:'y1'},
+      {type:'line',label:'GGR_adj(RM)',data:[4828.9400000000005, 4878.18, 1109.5900000000001, 3718.7599999999993, -1650.69],borderColor:'#DE350B',backgroundColor:'transparent',tension:0.3,pointRadius:5,pointBackgroundColor:'#DE350B',yAxisID:'y2'},
+    ]
+  },
+  options: {
+    responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},
+    plugins:{legend:{position:'top',labels:{font:{size:11}}}},
+    scales:{
+      y:{type:'linear',position:'left',ticks:{color:'#5E6C84'},title:{display:true,text:'Spend($)'}},
+      y1:{type:'linear',position:'right',grid:{drawOnChartArea:false},ticks:{color:'#00875A'},title:{display:true,text:'FDC_adj'}},
+      y2:{display:false}
+    }
+  }
+});
+</script>
+
+</body>
+</html>
